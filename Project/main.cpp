@@ -16,76 +16,55 @@
 
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-
+#include "MainMenu.hpp"
+#include <iostream>
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
-
-int main(int, char const**)
-{
-    // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-
-    // Set the Icon
-    sf::Image icon;
-    if (!icon.loadFromFile(resourcePath() + "icon.png")) {
-        return EXIT_FAILURE;
-    }
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-
-    // Load a sprite to display
-    sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
-        return EXIT_FAILURE;
-    }
-    sf::Sprite sprite(texture);
-
-    // Create a graphical text to display
-    sf::Font font;
-    if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
-        return EXIT_FAILURE;
-    }
-    sf::Text text("Hello SFML", font, 50);
-    text.setFillColor(sf::Color::Black);
-
-    // Load a music to play
-    sf::Music music;
-    if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
-        return EXIT_FAILURE;
-    }
-
-    // Play the music
-    music.play();
-
-    // Start the game loop
-    while (window.isOpen())
-    {
-        // Process events
+using namespace std;
+int main( ){
+    sf::RenderWindow window(sf::VideoMode(600,600), "Game Menu!");
+    
+    Menu menu(window.getSize().x, window.getSize().y);
+    
+    while (window.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event))
-        {
-            // Close window: exit
-            if (event.type == sf::Event::Closed) {
-                window.close();
-            }
-
-            // Escape pressed: exit
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                window.close();
+        
+        while (window.pollEvent(event)) {
+            switch (event.type) {
+                    
+                case sf::Event::KeyReleased:
+                    switch (event.key.code) {
+                            
+                        case sf::Keyboard::Up:
+                            menu.MoveUp();
+                            break;
+                            
+                            case sf::Keyboard::Down:
+                            menu.MoveDown();
+                            break;
+                        case sf::Keyboard::Return:
+                            switch (menu.GetPressedItem()) {
+                                case 0:
+                                    cout<<"Play button prseed"<<endl;
+                                    break;
+                                case 1:
+                                    window.close();
+                                    break;
+                               
+                            }
+                    }
+                    break;
+                    
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+                    
+                default:
+                    break;
             }
         }
-
-        // Clear screen
         window.clear();
-
-        // Draw the sprite
-        window.draw(sprite);
-
-        // Draw the string
-        window.draw(text);
-
-        // Update the window
+        menu.draw(window);
         window.display();
     }
-
-    return EXIT_SUCCESS;
 }
