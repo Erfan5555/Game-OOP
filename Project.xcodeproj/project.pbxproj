@@ -14,6 +14,7 @@
 		A7AAF5DB28D6FDFF00532AF7 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5DA28D6FDFF00532AF7 /* sansation.ttf */; };
 		A7AAF5DD28D6FDFF00532AF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5DC28D6FDFF00532AF7 /* icon.png */; };
 		A7AAF5E528D6FE8800532AF7 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */; };
+		A7AAF5E728D7109900532AF7 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5E628D7109900532AF7 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A7AAF5DC28D6FDFF00532AF7 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		A7AAF5E428D6FE8800532AF7 /* MainMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
+		A7AAF5E628D7109900532AF7 /* Fonts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fonts; path = Project/Fonts; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		A7AAF5D528D6FDFF00532AF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A7AAF5E628D7109900532AF7 /* Fonts */,
 				A7AAF5D628D6FDFF00532AF7 /* cute_image.jpg */,
 				A7AAF5D828D6FDFF00532AF7 /* nice_music.ogg */,
 				A7AAF5DA28D6FDFF00532AF7 /* sansation.ttf */,
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AAF5E728D7109900532AF7 /* Fonts in Resources */,
 				A7AAF5DD28D6FDFF00532AF7 /* icon.png in Resources */,
 				A7AAF5DB28D6FDFF00532AF7 /* sansation.ttf in Resources */,
 				A7AAF5D928D6FDFF00532AF7 /* nice_music.ogg in Resources */,
