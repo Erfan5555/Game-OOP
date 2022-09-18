@@ -50,7 +50,6 @@ int main( ){
                                 case 1:
                                     window.close();
                                     break;
-                               
                             }
                     }
                     break;
