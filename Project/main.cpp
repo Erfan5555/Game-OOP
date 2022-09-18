@@ -21,6 +21,8 @@
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
 using namespace std;
+
+//THIS IS THE MAIN MENU 
 int main( ){
     sf::RenderWindow window(sf::VideoMode(600,600), "Game Menu!");
     
@@ -46,6 +48,10 @@ int main( ){
                             switch (menu.GetPressedItem()) {
                                 case 0:
                                     cout<<"Play button prseed"<<endl;
+                                    window.close();
+                                    //THIS WILL PROBABLY HAVE THE SECOND WINODW CLOSING
+                                    //THE MAIN MENU WITH THE GAME CODE HERE
+                                    cout<<"Game playing"<<endl;
                                     break;
                                 case 1:
                                     window.close();
