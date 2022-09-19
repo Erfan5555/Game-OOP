@@ -19,6 +19,7 @@ Game::Game(){
         
 void Game::run(){
     
+    
     Menu menu(window->getSize().x, window->getSize().y);
     while (window->isOpen()) {
         while (window->pollEvent(event)) {
@@ -36,13 +37,16 @@ void Game::run(){
                             break;
                         case sf::Keyboard::Return:
                             switch (menu.GetPressedItem()) {
-                                case 0:
+                                case 0:{
                                     cout<<"Play button prseed"<<endl;
                                     window->close();
                                     //THIS WILL PROBABLY HAVE THE SECOND WINODW CLOSING
                                     //THE MAIN MENU WITH THE GAME CODE HERE
+                                    window->close();
+                                    Kingdom g;
+                                    g.PlayGame();
                                     cout<<"Game playing"<<endl;
-                                    break;
+                                break;}
                                 case 1:
                                     window->close();
                                     break;
@@ -68,11 +72,6 @@ Game::~Game(){
     delete this->window;
 }
 
-void Game::update(){
-    
-}
-void Game::render(){
-    
-}
+
 
 

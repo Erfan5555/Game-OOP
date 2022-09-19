@@ -15,6 +15,8 @@
 		A7AAF5DD28D6FDFF00532AF7 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5DC28D6FDFF00532AF7 /* icon.png */; };
 		A7AAF5E528D6FE8800532AF7 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */; };
 		A7AAF5E728D7109900532AF7 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5E628D7109900532AF7 /* Fonts */; };
+		A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5EC28D8240E00532AF7 /* Game.cpp */; };
+		A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
 		A7AAF5E428D6FE8800532AF7 /* MainMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenu.hpp; sourceTree = "<group>"; };
 		A7AAF5E628D7109900532AF7 /* Fonts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fonts; path = Project/Fonts; sourceTree = SOURCE_ROOT; };
+		A7AAF5EC28D8240E00532AF7 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		A7AAF5ED28D8240E00532AF7 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gameplay.cpp; sourceTree = "<group>"; };
+		A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gameplay.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,10 @@
 				A7AAF5D228D6FDFF00532AF7 /* ResourcePath.hpp */,
 				A7AAF5D328D6FDFF00532AF7 /* main.cpp */,
 				A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */,
+				A7AAF5EC28D8240E00532AF7 /* Game.cpp */,
+				A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */,
+				A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */,
+				A7AAF5ED28D8240E00532AF7 /* Game.hpp */,
 				A7AAF5E428D6FE8800532AF7 /* MainMenu.hpp */,
 				A7AAF5D528D6FDFF00532AF7 /* Resources */,
 				A7AAF5CE28D6FDFF00532AF7 /* Supporting Files */,
@@ -189,7 +199,9 @@
 			files = (
 				A7AAF5D428D6FDFF00532AF7 /* main.cpp in Sources */,
 				A7AAF5E528D6FE8800532AF7 /* MainMenu.cpp in Sources */,
+				A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */,
 				A7AAF5D128D6FDFF00532AF7 /* ResourcePath.mm in Sources */,
+				A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

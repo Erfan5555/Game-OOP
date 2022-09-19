@@ -1,15 +1,11 @@
-//
-//  Game.hpp
-//  Project
-//
-//  Created by Oliver Askew on 19/9/2022.
-//  Copyright © 2022 Oliver Askew. All rights reserved.
-//
+/*
+ THIS IS THE HPP FILE FOR THE ACTUAL GAME CODE.
+ 
+ */
 #pragma once
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include "MainMenu.hpp"
-#include "Gameplay.hpp""
 #include <iostream>
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
@@ -17,16 +13,15 @@
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
 #include <memory>
-
-class Game{
+class Kingdom{
 private:
     sf::RenderWindow* window;
     sf::Event event;
     
 public:
-    Game();
-    void run();
-    virtual ~Game();
+    Kingdom();
+    void PlayGame();
+    virtual ~Kingdom();
     
     
 
@@ -35,3 +30,4 @@ public:
 #include <stdio.h>
 
 
+/* Gameplay_hpp */
