@@ -18,58 +18,14 @@
 #include <SFML/Graphics.hpp>
 #include "MainMenu.hpp"
 #include <iostream>
+#include "Game.hpp"
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
 using namespace std;
 
 //THIS IS THE MAIN MENU 
 int main( ){
-    sf::RenderWindow window(sf::VideoMode(600,600), "Game Menu!");
+    Game game;
+    game.run();
     
-    Menu menu(window.getSize().x, window.getSize().y);
-    
-    while (window.isOpen()) {
-        sf::Event event;
-        
-        while (window.pollEvent(event)) {
-            switch (event.type) {
-                    
-                case sf::Event::KeyReleased:
-                    switch (event.key.code) {
-                            
-                        case sf::Keyboard::Up:
-                            menu.MoveUp();
-                            break;
-                            
-                            case sf::Keyboard::Down:
-                            menu.MoveDown();
-                            break;
-                        case sf::Keyboard::Return:
-                            switch (menu.GetPressedItem()) {
-                                case 0:
-                                    cout<<"Play button prseed"<<endl;
-                                    window.close();
-                                    //THIS WILL PROBABLY HAVE THE SECOND WINODW CLOSING
-                                    //THE MAIN MENU WITH THE GAME CODE HERE
-                                    cout<<"Game playing"<<endl;
-                                    break;
-                                case 1:
-                                    window.close();
-                                    break;
-                            }
-                    }
-                    break;
-                    
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-                    
-                default:
-                    break;
-            }
-        }
-        window.clear();
-        menu.draw(window);
-        window.display();
-    }
 }
