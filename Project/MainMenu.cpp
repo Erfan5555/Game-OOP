@@ -12,13 +12,15 @@ Menu::Menu(float width, float height){
         //handle error
     }
     text[0].setFont(font);
+    text[0].setCharacterSize(70);
     text[0].setFillColor(sf::Color::Red);
     text[0].setString("Play");
-    text[0].setPosition(sf::Vector2f(width/2, height/(MAX_NUMBER_OF_ITEMS+1)*1));
+    text[0].setPosition(sf::Vector2f(width/2.1, height/(MAX_NUMBER_OF_ITEMS+1)*1));
     text[1].setFont(font);
+    text[1].setCharacterSize(70);
     text[1].setFillColor(sf::Color::White);
     text[1].setString("Exit");
-    text[1].setPosition(sf::Vector2f(width/2, height/(MAX_NUMBER_OF_ITEMS+1)*2));
+    text[1].setPosition(sf::Vector2f(width/2.1, height/(MAX_NUMBER_OF_ITEMS+1)*2));
     
     selectedItemIndex = 0;
 }

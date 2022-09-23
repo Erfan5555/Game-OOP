@@ -41,8 +41,12 @@ void Game::run(){
                                 case 0:{
                                     cout<<"Play button prseed"<<endl;
                                     window->close();
+                                    
+                                    // Game class to play game. Titled GamePlay 
                                     Kingdom g;
                                     g.run();
+                                    
+                                    
                                     window->close();
                                     cout<<"Game playing"<<endl;
                                 break;}
