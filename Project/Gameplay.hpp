@@ -24,6 +24,7 @@
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
 #include <memory>
+#include "Button.hpp"
 class Kingdom{
 private:
     sf::RenderWindow* window;
