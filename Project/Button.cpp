@@ -16,19 +16,19 @@ Button::Button(std::string t){
         //handle error
     }
     text.setFont(font);
-    text.setCharacterSize(70);
+    text.setCharacterSize(30);
     text.setString(t);
     text.setFillColor(sf::Color::White);
     
     button.setFillColor(sf::Color::Green);
-    button.setSize(sf::Vector2f(600,600));
+    button.setSize(sf::Vector2f(300,300));
 }
 
 void Button::hoverSize(){
-    button.setSize(sf::Vector2f(650,650));
+    button.setSize(sf::Vector2f(350,350));
 }
 void Button::normalSize(){
-    button.setSize(sf::Vector2f(600,600));
+    button.setSize(sf::Vector2f(300,300));
 }
 
 void Button::setPosition(sf::Vector2f pos){

@@ -33,7 +33,7 @@ Kingdom::Kingdom(){
 void Kingdom::run(){
     
     Button yesBTN("test Button");
-        yesBTN.setPosition({500,400});
+        yesBTN.setPosition({200,400});
     
         
         sf::CircleShape shape(100.f);
