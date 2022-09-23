@@ -17,6 +17,8 @@
 		A7AAF5E728D7109900532AF7 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A7AAF5E628D7109900532AF7 /* Fonts */; };
 		A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5EC28D8240E00532AF7 /* Game.cpp */; };
 		A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */; };
+		A7AAF5F728DC467400532AF7 /* Church.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5F528DC467400532AF7 /* Church.cpp */; };
+		A7AAF5FA28DC48D800532AF7 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5F828DC48D800532AF7 /* Button.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		A7AAF5ED28D8240E00532AF7 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gameplay.cpp; sourceTree = "<group>"; };
 		A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gameplay.hpp; sourceTree = "<group>"; };
+		A7AAF5F528DC467400532AF7 /* Church.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Church.cpp; sourceTree = "<group>"; };
+		A7AAF5F628DC467400532AF7 /* Church.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Church.hpp; sourceTree = "<group>"; };
+		A7AAF5F828DC48D800532AF7 /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		A7AAF5F928DC48D800532AF7 /* Button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 				A7AAF5D328D6FDFF00532AF7 /* main.cpp */,
 				A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */,
 				A7AAF5EC28D8240E00532AF7 /* Game.cpp */,
+				A7AAF5F528DC467400532AF7 /* Church.cpp */,
+				A7AAF5F828DC48D800532AF7 /* Button.cpp */,
+				A7AAF5F928DC48D800532AF7 /* Button.hpp */,
+				A7AAF5F628DC467400532AF7 /* Church.hpp */,
 				A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */,
 				A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */,
 				A7AAF5ED28D8240E00532AF7 /* Game.hpp */,
@@ -199,6 +209,8 @@
 			files = (
 				A7AAF5D428D6FDFF00532AF7 /* main.cpp in Sources */,
 				A7AAF5E528D6FE8800532AF7 /* MainMenu.cpp in Sources */,
+				A7AAF5F728DC467400532AF7 /* Church.cpp in Sources */,
+				A7AAF5FA28DC48D800532AF7 /* Button.cpp in Sources */,
 				A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */,
 				A7AAF5D128D6FDFF00532AF7 /* ResourcePath.mm in Sources */,
 				A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */,

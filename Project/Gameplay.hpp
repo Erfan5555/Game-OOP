@@ -1,7 +1,18 @@
-/*
- THIS IS THE HPP FILE FOR THE ACTUAL GAME CODE.
- 
- */
+//
+//  Gameplay.hpp
+//  Project
+//
+//  Created by Oliver Askew on 19/9/2022.
+//  Copyright © 2022 Oliver Askew. All rights reserved.
+//
+
+//
+//  Game.hpp
+//  Project
+//
+//  Created by Oliver Askew on 19/9/2022.
+//  Copyright © 2022 Oliver Askew. All rights reserved.
+//
 #pragma once
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
@@ -17,10 +28,11 @@ class Kingdom{
 private:
     sf::RenderWindow* window;
     sf::Event event;
+    sf::Font font;
     
 public:
     Kingdom();
-    void PlayGame();
+    void run();
     virtual ~Kingdom();
     
     

@@ -10,6 +10,7 @@
 #define MainMenu_hpp
 #define  MAX_NUMBER_OF_ITEMS 2
 #include <stdio.h>
+#include "Gameplay.hpp"
 class Menu{
 public:
     Menu(float width, float height);

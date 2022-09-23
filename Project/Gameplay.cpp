@@ -21,33 +21,44 @@ using namespace std;
 
 
 Kingdom::Kingdom(){
-  this->  window = new sf::RenderWindow(sf::VideoMode(600,600), "welcome to the game");
+  this->  window = new sf::RenderWindow(sf::VideoMode(1920,1080), "welcome to the game");
+    if (!font.loadFromFile("Fonts/Roboto-Medium.ttf")){
+        //handle error
+    }
     
 }
 
         
-void Kingdom::PlayGame(){
+void Kingdom::run(){
     
     
-    Menu menu(window->getSize().x, window->getSize().y);
-    while (window->isOpen()) {
-        while (window->pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                window->close();
+    
+        
+        sf::CircleShape shape(100.f);
+        shape.setFillColor(sf::Color::Green);
+
+        while (this->window->isOpen())
+        {
+            sf::Event event;
+            while (this->window->pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    this->window->close();
             }
-                    
-                            
-                  
-            }
+
+            this->window->clear();
+           this->window->draw(shape);
+            this->window->display();
         }
-        window->clear();
-    
-        window->display();
+
+     
     }
+
 
 
 Kingdom::~Kingdom(){
     delete this->window;
+    
 }
 
 

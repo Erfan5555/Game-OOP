@@ -7,12 +7,13 @@
 //
 
 #include "Game.hpp"
+#include <iostream>
 #include <string>
 using namespace std;
 
 
 Game::Game(){
-  this->  window = new sf::RenderWindow(sf::VideoMode(600,600), "Game Menu!");
+  this->  window = new sf::RenderWindow(sf::VideoMode(1920,1080), "Game Menu!");
     
 }
 
@@ -40,11 +41,9 @@ void Game::run(){
                                 case 0:{
                                     cout<<"Play button prseed"<<endl;
                                     window->close();
-                                    //THIS WILL PROBABLY HAVE THE SECOND WINODW CLOSING
-                                    //THE MAIN MENU WITH THE GAME CODE HERE
-                                    window->close();
                                     Kingdom g;
-                                    g.PlayGame();
+                                    g.run();
+                                    window->close();
                                     cout<<"Game playing"<<endl;
                                 break;}
                                 case 1:
