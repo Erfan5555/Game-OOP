@@ -17,6 +17,10 @@
 		A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5EC28D8240E00532AF7 /* Game.cpp */; };
 		A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */; };
 		A7AAF60028DD5EAE00532AF7 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF5FE28DD5EAE00532AF7 /* Button.cpp */; };
+		A7AAF60328DFD6A200532AF7 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF60128DFD6A200532AF7 /* Person.cpp */; };
+		A7AAF60628DFDB7000532AF7 /* Advisor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF60428DFDB7000532AF7 /* Advisor.cpp */; };
+		A7AAF60928DFE1F200532AF7 /* King.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF60728DFE1F200532AF7 /* King.cpp */; };
+		A7AAF60C28DFE5ED00532AF7 /* Spirit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7AAF60A28DFE5ED00532AF7 /* Spirit.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,14 @@
 		A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gameplay.hpp; sourceTree = "<group>"; };
 		A7AAF5FE28DD5EAE00532AF7 /* Button.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
 		A7AAF5FF28DD5EAE00532AF7 /* Button.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Button.hpp; sourceTree = "<group>"; };
+		A7AAF60128DFD6A200532AF7 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		A7AAF60228DFD6A200532AF7 /* Person.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
+		A7AAF60428DFDB7000532AF7 /* Advisor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Advisor.cpp; sourceTree = "<group>"; };
+		A7AAF60528DFDB7000532AF7 /* Advisor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Advisor.hpp; sourceTree = "<group>"; };
+		A7AAF60728DFE1F200532AF7 /* King.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = King.cpp; sourceTree = "<group>"; };
+		A7AAF60828DFE1F200532AF7 /* King.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = King.hpp; sourceTree = "<group>"; };
+		A7AAF60A28DFE5ED00532AF7 /* Spirit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Spirit.cpp; sourceTree = "<group>"; };
+		A7AAF60B28DFE5ED00532AF7 /* Spirit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Spirit.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,14 @@
 				A7AAF5E328D6FE8800532AF7 /* MainMenu.cpp */,
 				A7AAF5EC28D8240E00532AF7 /* Game.cpp */,
 				A7AAF5F228D835CB00532AF7 /* Gameplay.cpp */,
+				A7AAF60128DFD6A200532AF7 /* Person.cpp */,
+				A7AAF60228DFD6A200532AF7 /* Person.hpp */,
+				A7AAF60728DFE1F200532AF7 /* King.cpp */,
+				A7AAF60828DFE1F200532AF7 /* King.hpp */,
+				A7AAF60428DFDB7000532AF7 /* Advisor.cpp */,
+				A7AAF60528DFDB7000532AF7 /* Advisor.hpp */,
+				A7AAF60A28DFE5ED00532AF7 /* Spirit.cpp */,
+				A7AAF60B28DFE5ED00532AF7 /* Spirit.hpp */,
 				A7AAF5FE28DD5EAE00532AF7 /* Button.cpp */,
 				A7AAF5FF28DD5EAE00532AF7 /* Button.hpp */,
 				A7AAF5F328D835CB00532AF7 /* Gameplay.hpp */,
@@ -198,11 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AAF60928DFE1F200532AF7 /* King.cpp in Sources */,
 				A7AAF5D428D6FDFF00532AF7 /* main.cpp in Sources */,
 				A7AAF5E528D6FE8800532AF7 /* MainMenu.cpp in Sources */,
+				A7AAF60328DFD6A200532AF7 /* Person.cpp in Sources */,
 				A7AAF5F428D835CB00532AF7 /* Gameplay.cpp in Sources */,
+				A7AAF60628DFDB7000532AF7 /* Advisor.cpp in Sources */,
 				A7AAF5D128D6FDFF00532AF7 /* ResourcePath.mm in Sources */,
 				A7AAF5EE28D8240E00532AF7 /* Game.cpp in Sources */,
+				A7AAF60C28DFE5ED00532AF7 /* Spirit.cpp in Sources */,
 				A7AAF60028DD5EAE00532AF7 /* Button.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
