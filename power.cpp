@@ -10,7 +10,7 @@ class show_all_variables { // intended for programmers only
     public:
     virtual void show_vars()=0;
     
-}
+};
 
 
 class power:public show_all_variables{
@@ -38,6 +38,10 @@ virtual int set_overall_value()=0; //Overall value is the number seen
 void show_vars(){
     cout<<"kings's popularity:"<<King_Popularity<<endl;
     cout<<"overall value is: "<<Overall_value<<endl;
+}
+
+void set_king_popularity(int new_value){
+    King_Popularity=new_value;
 }
 
 void kill_king(){ // INSERT THE GAME END FUNCTION
@@ -234,6 +238,19 @@ class wealth:public power{
     cout<<"overall value is: "<<Overall_value<<endl;
 }
     
+};
+
+
+class card: public people, public Army, public church, public wealth {
+public:
+string text_scenario;
+
+void show_text(string text){
+    text_scenario=text;
+    cout<<text_scenario<<endl;
+}
+
+
 };
 
 
