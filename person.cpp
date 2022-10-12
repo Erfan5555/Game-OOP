@@ -1,6 +1,6 @@
 # include <iostream>
 # include <string>
-# include "power.cpp"
+
 
 using namespace std;
 
@@ -19,7 +19,7 @@ person(string name,string job): name(name), job( job){live_or_dead=true;} // con
 person(): person(" ", " "){live_or_dead=true;} // constructor
 
 
-virtual void show_face()= 0; // abstract class, these are implemented in each dervied class
+virtual void show_face(string face)= 0; // abstract class, these are implemented in each dervied class
 virtual void speak(string text)=0;
 
 };
@@ -37,7 +37,7 @@ advisor(string name, string job, int power): person(name,job),power(power){live_
 advisor(): advisor(" ", " ", 0){live_or_dead=true;};
 
 void dead_advisor (){
-    live_or_dead= false;
+    live_or_dead= false; 
 }
 
 
@@ -45,15 +45,13 @@ void speak(string text){
     cout<<text<<endl;
 }
 
-void show_face(){ // visulisastation here
-    cout<<"imagine you are seeing a face right now"<<endl;
+void show_face(string face){ // visulisastation here
+    cout<<face <<endl;
 }
 
 
 
 };
-
-
 
 class king :  public advisor, virtual public person{
     private: // dont know why the power is not inheretd from advisor
@@ -75,9 +73,7 @@ void set_years_in_power(int years){
     number_of_years_in_power=years;
 }
 
-void speak(){
-    cout<<"king has spoken"<<endl;
-}
+
 
 void speak(string text){
     cout<<text<<endl;
@@ -91,10 +87,9 @@ void dead_king (){
 void kill_advisor(){
     advisor::dead_advisor();
 }
-
-
-
 };
+
+
 
 
 class spirit: public king, virtual public person{
@@ -121,12 +116,9 @@ void cast_spell(int value){
 void speak(string text){
     cout<<text<<endl;
 }
-
 void show_face(){ // visulisastation here
     cout<<"imagine you are seeing a face right now"<<endl;
 }
-
-
 };
 
 

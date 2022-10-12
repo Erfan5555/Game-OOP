@@ -6,7 +6,8 @@ using namespace std;
 // abstract class since the method rebel and kill king is not implemented.
 // No object of this class is intendeded to be instantiated.
 
-class show_all_variables { // intended for programmers only
+class show_all_variables { // intended for programmers only 
+// avaiable in all of the classes
     public:
     virtual void show_vars()=0;
     
@@ -35,8 +36,8 @@ virtual int set_overall_value()=0; //Overall value is the number seen
 // set_overall_value will be put in after each time a card has been drawen and the user
 // makes a decsion
 
-void show_vars(){
-    cout<<"kings's popularity:"<<King_Popularity<<endl;
+void show_overall_var(){
+  
     cout<<"overall value is: "<<Overall_value<<endl;
 }
 
@@ -83,10 +84,9 @@ int set_overall_value(){ //
         value =100;
         game_switch=false; // ends the king's life and start a new game.
     }
+    
     return value;
 }
-
-
 
 void change_employment (int Employment ){
 this->Employment = Employment;
@@ -212,11 +212,7 @@ class Army: public power {
      cout<<" Avaiable food is:"<<food_avaliblity<<endl;
     
     cout<<"overall value is: "<<Overall_value<<endl;
-}
-
-  
-  
-
+} 
 };
 
 class wealth:public power{
@@ -229,6 +225,26 @@ class wealth:public power{
     
     void set_weatlh(int new_wealth){
         wealth_of_king=new_wealth;
+    }
+
+     void Rebel(){
+        wealth_of_king=wealth_of_king-10;
+    }
+    int set_overall_value(){
+        
+          int value=wealth_of_king;
+       Overall_value= value;
+
+        if (value<0){
+        value=0;
+        game_switch=false;
+    }
+    if (value>100){
+        value =100;
+        game_switch=true;
+    }
+    return value;
+
     }
 
   void show_vars(){
@@ -253,21 +269,3 @@ void show_text(string text){
 
 };
 
-
-
-
-
-int main (){ // This is just for testing of classes
-
-people k(25,25,25);
-
-church f(90,0);
-Army s(4,55,55); // TEST THE SHOW_OVERALL_VALUES
-s.set_overall_value();
-k.kill_king();
-s.show_overall_value();
-cout<<"This is the value for church:";
-f.set_overall_value();
-f.show_overall_value();
-
-}
