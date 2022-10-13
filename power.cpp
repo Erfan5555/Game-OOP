@@ -17,13 +17,18 @@ class show_all_variables { // intended for programmers only
 class power:public show_all_variables{
 protected :
 int King_Popularity;
-int Overall_value;
+int *Overall_value=new int(2);
 bool game_switch; // This ends the king's life
 
 public:
 
-power (int popularity, int satsifactionValue): King_Popularity(popularity),
-Overall_value(satsifactionValue){game_switch=true;} // intlisaed the constructor of 
+power (int popularity, int satsifactionValue)
+{
+    game_switch=true;
+    King_Popularity=popularity;
+    *Overall_value=satsifactionValue;
+    
+    } // intlisaed the constructor of 
 //power
 
 power(): power(100,100){game_switch=true;} // intliases the constructor if no values are inputed
@@ -38,7 +43,7 @@ virtual int set_overall_value()=0; //Overall value is the number seen
 
 void show_overall_var(){
   
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
 
 void set_king_popularity(int new_value){
@@ -75,7 +80,7 @@ void Rebel ( ){ // polymorphism here
 
 int set_overall_value(){ // 
    int value= Employment+ Entertainmnet+Food_avaliable+King_Popularity;
-    Overall_value= value;
+    *Overall_value= value;
     if (value<0){
         value=0;
         game_switch=false; // ends the king's life and start a new game.
@@ -140,7 +145,7 @@ void change_wealth_of_pop(int new_wealth){
     int set_overall_value(){ // 
 
     int value= number_of_churches+wealth_of_pop;
-    Overall_value= value;
+    *Overall_value= value;
 
     if (value<0){
         value=0;
@@ -153,15 +158,15 @@ void change_wealth_of_pop(int new_wealth){
     return value;
 }
  int show_overall_value(){
-        cout<<"the overall value is:"<< Overall_value <<endl;
-        return Overall_value;
+        cout<<"the overall value is:"<< *Overall_value <<endl;
+        return *Overall_value;
     }
 
     void show_vars(){
     cout<<"church number value is:"<<number_of_churches<<endl;
     cout<<"wealth of the pop is:"<<wealth_of_pop<<endl;
    
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
 
   
@@ -189,7 +194,7 @@ class Army: public power {
 
    int set_overall_value(){
         int value=numb_of_troops+quality_of_weapons+food_avaliblity;
-       Overall_value= value;
+       *Overall_value= value;
 
         if (value<0){
         value=0;
@@ -203,15 +208,15 @@ class Army: public power {
     }
 
     int show_overall_value(){
-        cout<<"the overall value is:"<< Overall_value <<endl;
-               return Overall_value;
+        cout<<"the overall value is:"<< *Overall_value <<endl;
+               return *Overall_value;
     }
     void show_vars(){
     cout<<"number of troops is:"<<numb_of_troops<<endl;
     cout<<" Quality of weapons is:"<<quality_of_weapons<<endl;
      cout<<" Avaiable food is:"<<food_avaliblity<<endl;
     
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 } 
 };
 
@@ -233,7 +238,7 @@ class wealth:public power{
     int set_overall_value(){
         
           int value=wealth_of_king;
-       Overall_value= value;
+       *Overall_value= value;
 
         if (value<0){
         value=0;
@@ -251,7 +256,7 @@ class wealth:public power{
     cout<<"wealth of the king is:"<<wealth_of_king<<endl;
     
     
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
     
 };
@@ -268,4 +273,3 @@ void show_text(string text){
 
 
 };
-
