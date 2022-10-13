@@ -26,11 +26,10 @@ virtual void speak(string text)=0;
 
 
 
-
 class advisor : virtual public person{
-    protected: 
-    int power;
+   
 public:
+int power;
 
 advisor(string name, string job, int power): person(name,job),power(power){live_or_dead=true;}
 
@@ -42,29 +41,33 @@ void dead_advisor (){
 
 
 void speak(string text){
-    cout<<text<<endl;
+    cout<<name<<" : "<<text<<endl;
 }
 
 void show_face(string face){ // visulisastation here
     cout<<face <<endl;
 }
-
-
-
 };
 
-class king :  public advisor, virtual public person{
+class king :  public advisor{
     private: // dont know why the power is not inheretd from advisor
         int number_of_years_in_power;
-    protected :
-    int power;
+//     protected :
+//  int power;
 
-
-   
 public:
 
-king(string name, string job, int power, int years): person(name,job),
-number_of_years_in_power(years),power(power){live_or_dead=true;}
+king(string name_input, string job_input, int power_input, int years){
+    name =name_input;
+    job= job_input;
+    power=power_input;
+    number_of_years_in_power=years;
+    live_or_dead=true;
+}
+
+// person(name,job),
+// number_of_years_in_power(years), advisor(power){live_or_dead=true;}
+
 king (): king(" "," ",100, 0){}
 
 
@@ -88,8 +91,6 @@ void kill_advisor(){
     advisor::dead_advisor();
 }
 };
-
-
 
 
 class spirit: public king, virtual public person{
@@ -121,4 +122,6 @@ void show_face(){ // visulisastation here
 }
 };
 
+// int main(){
 
+// }
