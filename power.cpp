@@ -15,12 +15,11 @@ class show_all_variables { // intended for programmers only
 
 
 class power:public show_all_variables{
-protected :
+
+public:
 int King_Popularity;
 int *Overall_value=new int(2);
 bool game_switch; // This ends the king's life
-
-public:
 
 power (int popularity, int satsifactionValue)
 {
@@ -56,16 +55,20 @@ void kill_king(){ // INSERT THE GAME END FUNCTION
 }
 
 
+
+
 };
 
 
 class people :public power{
-protected :
+
+
+
+public :
 int Employment;
 int Entertainmnet;
 int Food_avaliable;
 
-public :
 people(int Employment_new_Value, int Entertainmnet_new_Value, 
 int Food_avaliable_new_Value): power(50,50), Employment(Employment_new_Value),Entertainmnet(Entertainmnet_new_Value)
 ,Food_avaliable(Food_avaliable_new_Value){} // intilisasing the constructor
@@ -106,6 +109,9 @@ void change_food_avaliable (int Food_avaliable){
 }
 
 
+
+
+
 void show_vars(){
     cout<<"employment is:"<<Employment<<endl;
     cout<<"avaiable food is:"<<Food_avaliable<<endl;
@@ -117,11 +123,10 @@ void show_vars(){
 };
 
 class church : public power {
-protected:
+
+public :
 int number_of_churches;
 int wealth_of_pop;
- 
-public :
 // intlisases the church constructors 
 church (int number, int wealth): power(50,50),number_of_churches(number), wealth_of_pop(wealth){}
 
@@ -176,13 +181,13 @@ void change_wealth_of_pop(int new_wealth){
 
 
 class Army: public power {
-    protected:
+    
+    public:
+
     int numb_of_troops;
     int quality_of_weapons;
     int food_avaliblity;
 
-
-    public:
     Army(int numb_of_troops, int quality_of_weapons,int food_avaiable):power(25,50), numb_of_troops(numb_of_troops),
     quality_of_weapons(quality_of_weapons),food_avaliblity(food_avaiable){}
 
@@ -207,6 +212,18 @@ class Army: public power {
     return value;
     }
 
+    void change_num_of_troops(int new_number){
+        numb_of_troops=new_number;
+    }
+
+    void change_quality_of_weapons(int new_quality){
+        quality_of_weapons=new_quality;
+    }
+
+    void change_available_food(int new_value){
+        food_avaliblity=new_value;
+    }
+
     int show_overall_value(){
         cout<<"the overall value is:"<< *Overall_value <<endl;
                return *Overall_value;
@@ -221,10 +238,11 @@ class Army: public power {
 };
 
 class wealth:public power{
-    protected :
-    int wealth_of_king;
 
+   
     public:
+     int wealth_of_king;
+
     wealth(int wealth): power(50,50), wealth_of_king(wealth){}; // intilisaing the values
     wealth(): wealth(50){}; // defult constructor with no input values
     
@@ -262,14 +280,4 @@ class wealth:public power{
 };
 
 
-class card: public people, public Army, public church, public wealth {
-public:
-string text_scenario;
 
-void show_text(string text){
-    text_scenario=text;
-    cout<<text_scenario<<endl;
-}
-
-
-};
