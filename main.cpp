@@ -199,11 +199,11 @@ Army *a = new Army (30,30,10);// creating a Army pointer to an object of the Arm
 
 // menu
 cout<<"menue"<<endl;
-cout<<"1: play new game"<<endl;
-cout<< "2: load game"<<endl;
-cout<<"3: exit"<<endl;
-cout<<"To select the options type 1,2 or 3 "<<endl;
-int option;
+cout<<"a: play new game"<<endl;
+cout<< "b: load game"<<endl;
+cout<<"c: exit"<<endl;
+cout<<"To select the options type a,b or c "<<endl;
+char option[2];
 
   cin>>option ;
 int while_stopper=1;
@@ -212,23 +212,23 @@ int while_stopper=1;
 // it informs them
 while (while_stopper==1){
    
-if (option==1){
+if (*option=='a' && option[1]==0){
     cout<<"new game created"<<endl;
     while_stopper=0;
 }
-else if (option==2){
+else if (*option=='b'&& option[1]==0){
     cout<<"game loaded"<<endl;
     load_game(p,c,w,a);
     update_stats(p,c,w,a);
-    check_point_load(check);
+     check_point_load(check);
      while_stopper=0;
 }
-else if (option==3 ){
+else if (*option=='c'&& option[1]==0 ){
  cout<<"game exited dont come back to this program ever again !"<<endl;
      while_stopper=0;
     return 0;
 }else{
-    cout<<"ENTER AN INTEGER THAT IS WITHIN THE RANGE ENTER AGAIN!"<<endl;
+    cout<<"Enter a, b or c !"<<endl;
     cin.clear();
      cin.ignore(numeric_limits<streamsize>::max(), '\n');
      cin>>option;
@@ -262,14 +262,18 @@ char *answer= new char(3);
      advisor banker ("Sir francis", "banker",15 );
      advisor doctor ("Dr Oz", "Doctor",0);
 
-     banker.speak("should we build more churches?");
-         save_game(p,c,w,a);
-    
-    cin>>answer;
+   
+   
+
 // sceario 1
 check_point=-1;
     check_point= check_point+1; // used to recoginse the game progression  
     while_stopper=1;
+        if (check[check_point]!=1){
+             banker.speak("should we build more churches?");
+         save_game(p,c,w,a);
+    cin>>answer;
+    }
      
     while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
   
@@ -301,12 +305,18 @@ check_point=-1;
 
     save_game(p,c,w,a);
 
-     queen.speak("It is your birthday ! lets throw a massive party !");
-    save_game(p,c,w,a);
-    cin>>answer;
+
+   
 // sceario 1
     check_point= check_point+1; // used to recoginse the game progression
     while_stopper=1;
+
+
+    if (check[check_point]!=1){
+           queen.speak("It is your birthday ! lets throw a massive party !");
+    save_game(p,c,w,a);
+    cin>>answer;
+    }
      
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
         if (*answer=='y' && answer[1]==0 ){ // if answer is yes it will cause ceratin changes 
@@ -335,15 +345,20 @@ check_point=-1;
           // buffer
             cin>>answer;
         }
-    save_game(p,c,w,a);
-    
-       doctor.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
 
-    cin>>answer;
+    
+
+
+      
 // sceario 1
 check_point= check_point+1; // used to recoginse the game progression
     while_stopper=1;
- 
+
+         if (check[check_point]!=1){ // checks if the user was at this point when they left the game
+            doctor.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
+            save_game(p,c,w,a);
+    cin>>answer;
+    }
  
 
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
@@ -380,12 +395,18 @@ check_point= check_point+1; // used to recoginse the game progression
 
 
 
-       general.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
-
-    cin>>answer;
+   
 // sceario 1
 check_point= check_point+1; // used to recoginse the game progressio
     while_stopper=1;
+
+
+   if (check[check_point]!=1){ // checks if the user was at this point when they left the game
+               general.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
+
+            save_game(p,c,w,a);
+    cin>>answer;
+    }
 
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
         if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
