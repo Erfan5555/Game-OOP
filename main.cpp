@@ -6,18 +6,46 @@
 # include <fstream>
 using namespace std;
 
+// updates the stats and prints them out in a user friendly way.
 void update_stats(people *p, church *c, wealth *w, Army *a){ // function to give out all
 // the stats. it updates the stats and printes them out.
-    cout<<"People:"<<p->set_overall_value()<<endl; // set_overal value updates the latest chagnes
-    // and returns the latest number
-    cout<<"church:"<<c->set_overall_value()<<endl;
-    cout<<"wealth:"<<w->set_overall_value()<<endl;
-    cout<<"Army:"<<a->set_overall_value()<<endl;
-}
+    int value;
+    value= p->set_overall_value();
+    value= value/10;
+    cout<<"people:";
+    for (int i=0; i<value;i++){
+        cout<<"-";
+    }
+    cout<<endl;
+
+    value= c->set_overall_value();
+    value= value/10;
+    cout<<"church:";
+    for (int i=0; i<value;i++){
+        cout<<"-";
+    }
+    cout<<endl;
+
+    value= w->set_overall_value();
+    value= value/10;
+    cout<<"wealth:";
+    for (int i=0; i<value;i++){
+        cout<<"-";
+    }
+    cout<<endl;
+
+      value= a->set_overall_value();
+    value= value/10;
+    cout<<"Army  :";
+    for (int i=0; i<value;i++){
+        cout<<"-";
+    }
+    cout<<endl;
+ }
 
 void save_game(people *p, church *c, wealth *w, Army *a){
 
-    // gets the four values of the game.
+    // gets the varaibles that make the overall value for each power.
    
     int value_emp = p->Employment;
     
@@ -51,7 +79,7 @@ void save_game(people *p, church *c, wealth *w, Army *a){
   
 }
  
-
+// loads the game data.
 void load_game(people *p, church *c, wealth *w, Army *a){
 
       // reads the values from a file called moarch- this saves the game
@@ -101,7 +129,37 @@ void load_game(people *p, church *c, wealth *w, Army *a){
     
  
 
+void check_point_input(int *array, int number_of_check_points){
+ofstream outputFile;
+   outputFile.open("monarch checkpoint.txt"); // appends to the existing array
+//    for (int i=0; i<number_of_check_points+1;i++){
+//      outputFile<<array[i];
+//    }
+    outputFile<<number_of_check_points;
+  
 
+}
+
+void check_point_load(int *array ){
+    int number_of_integers;
+        int number= 0;
+        
+  ifstream inputFile;
+
+    inputFile.open("monarch checkpoint.txt");    
+    int n;
+    // while(inputFile >> n){
+    //     number_of_integers=number_of_integers+1;
+    // }
+    // cout<<number_of_integers;
+  
+    inputFile >> n;
+
+    for (int i=0; i<n+1;i++){
+        array[i]=1;
+
+    }
+}
 
 
 // terminates the game if any of the valus are zero.
@@ -121,6 +179,8 @@ void check_end_game(people *p, church *c, wealth *w, Army *a){
 
 
 int main (){
+
+    int *check= new int [70]; // used to track the progression of the game and check point
 
 people* p = new people(25,25,25); // creating a people pointer to an object of the people
 
@@ -160,6 +220,7 @@ else if (option==2){
     cout<<"game loaded"<<endl;
     load_game(p,c,w,a);
     update_stats(p,c,w,a);
+    check_point_load(check);
      while_stopper=0;
 }
 else if (option==3 ){
@@ -187,14 +248,9 @@ cout<<endl;
 cout<<endl;
 
 cout<<"welcome  to the game"<<endl;
-
+int check_point;// is used to recoginse the placment of the game progression.
+check_point=-1;
 char *answer= new char(3);
-
-
-   
-    
-
-    
 
     advisor mat ("mat","people's speaker",15);
      mat.show_face(":>");
@@ -208,16 +264,21 @@ char *answer= new char(3);
 
      banker.speak("should we build more churches?");
          save_game(p,c,w,a);
-
+    
     cin>>answer;
 // sceario 1
+check_point=-1;
+    check_point= check_point+1; // used to recoginse the game progression  
     while_stopper=1;
-    while (while_stopper==1) // waits until the correct input has been made
+     
+    while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
+  
         if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
             c->change_number_of_churches(9);
             c->change_wealth_of_pop(25);
             update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
+            check[check_point]=1;
             
             while_stopper=0;
             
@@ -227,6 +288,7 @@ char *answer= new char(3);
             c->set_king_popularity(13);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
+            check[check_point]=1;
             while_stopper=0;
         }else{
             cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
@@ -243,8 +305,10 @@ char *answer= new char(3);
     save_game(p,c,w,a);
     cin>>answer;
 // sceario 1
+    check_point= check_point+1; // used to recoginse the game progression
     while_stopper=1;
-    while (while_stopper==1) // waits until the correct input has been made
+     
+    while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
         if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
             p->change_entertainment(39);
             w->set_weatlh(11);
@@ -252,6 +316,8 @@ char *answer= new char(3);
             check_end_game(p,c,w,a);
             
             while_stopper=0;
+
+                check[check_point]=1;
             
             
 
@@ -260,6 +326,8 @@ char *answer= new char(3);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             while_stopper=0;
+           
+             check[check_point]=1;
         }else{
             cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
             cin.clear(); // clears the string errors in buffer
@@ -273,8 +341,12 @@ char *answer= new char(3);
 
     cin>>answer;
 // sceario 1
+check_point= check_point+1; // used to recoginse the game progression
     while_stopper=1;
-    while (while_stopper==1) // waits until the correct input has been made
+ 
+ 
+
+    while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
         if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
             p->change_employment(45); 
             w->set_weatlh(3);
@@ -282,6 +354,8 @@ char *answer= new char(3);
             check_end_game(p,c,w,a);
             
             while_stopper=0;
+           
+                check[check_point]=1;
             
             
 
@@ -292,6 +366,8 @@ char *answer= new char(3);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             while_stopper=0;
+             
+                check[check_point]=1;
         }else{
             cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
             cin.clear(); // clears the string errors in buffer
@@ -308,8 +384,10 @@ char *answer= new char(3);
 
     cin>>answer;
 // sceario 1
+check_point= check_point+1; // used to recoginse the game progressio
     while_stopper=1;
-    while (while_stopper==1) // waits until the correct input has been made
+
+    while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
         if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
             p->change_employment(45); 
             w->set_weatlh(3);
@@ -317,6 +395,8 @@ char *answer= new char(3);
             check_end_game(p,c,w,a);
             
             while_stopper=0;
+           
+                check[check_point]=1;
             
             
 
@@ -327,6 +407,8 @@ char *answer= new char(3);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             while_stopper=0;
+      
+                check[check_point]=1;
         }else{
             cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
             cin.clear(); // clears the string errors in buffer
@@ -335,6 +417,13 @@ char *answer= new char(3);
             cin>>answer;
         }
     save_game(p,c,w,a);
+    check_point_input(check,check_point);
+    // for (int i=0; i<check_point+1;i++){
+    //     cout<<check[i];
+    // }
+
+    check_point_load(check);
+    
     
 
 }
