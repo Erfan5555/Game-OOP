@@ -273,7 +273,7 @@ check_point=-1;
      
     while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
   
-        if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
+        if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
             c->change_number_of_churches(9);
             c->change_wealth_of_pop(25);
             update_stats(p,c,w,a);
@@ -284,14 +284,14 @@ check_point=-1;
             
             
 
-        }else if (*answer=='n'){ //if answer is no, it will cause ceratin changes 
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             c->set_king_popularity(13);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             check[check_point]=1;
             while_stopper=0;
         }else{
-            cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
+        cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
           // buffer
@@ -309,7 +309,7 @@ check_point=-1;
     while_stopper=1;
      
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
-        if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
+        if (*answer=='y' && answer[1]==0 ){ // if answer is yes it will cause ceratin changes 
             p->change_entertainment(39);
             w->set_weatlh(11);
             update_stats(p,c,w,a);
@@ -321,7 +321,7 @@ check_point=-1;
             
             
 
-        }else if (*answer=='n'){ //if answer is no, it will cause ceratin changes 
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             c->set_king_popularity(23);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
@@ -329,7 +329,7 @@ check_point=-1;
            
              check[check_point]=1;
         }else{
-            cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
+             cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
           // buffer
@@ -347,7 +347,7 @@ check_point= check_point+1; // used to recoginse the game progression
  
 
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
-        if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
+        if (*answer=='y' && answer[1]==0 ){ // if answer is yes it will cause ceratin changes 
             p->change_employment(45); 
             w->set_weatlh(3);
             update_stats(p,c,w,a);
@@ -359,7 +359,7 @@ check_point= check_point+1; // used to recoginse the game progression
             
             
 
-        }else if (*answer=='n'){ //if answer is no, it will cause ceratin changes 
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             p->change_employment(22);
             p->change_food_avaliable(1);
 
@@ -369,7 +369,7 @@ check_point= check_point+1; // used to recoginse the game progression
              
                 check[check_point]=1;
         }else{
-            cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
+            cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
           // buffer
@@ -388,7 +388,7 @@ check_point= check_point+1; // used to recoginse the game progressio
     while_stopper=1;
 
     while (while_stopper==1 && check[check_point]!=1) // waits until the correct input has been made
-        if (*answer=='y' ){ // if answer is yes it will cause ceratin changes 
+        if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
             p->change_employment(45); 
             w->set_weatlh(3);
             update_stats(p,c,w,a);
@@ -400,7 +400,7 @@ check_point= check_point+1; // used to recoginse the game progressio
             
             
 
-        }else if (*answer=='n'){ //if answer is no, it will cause ceratin changes 
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             p->change_employment(22);
             p->change_food_avaliable(1);
 
@@ -410,7 +410,7 @@ check_point= check_point+1; // used to recoginse the game progressio
       
                 check[check_point]=1;
         }else{
-            cout<<"TYPE EITHER Y FOR YES OR N FOR NO";
+            cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
           // buffer
