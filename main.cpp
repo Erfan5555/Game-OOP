@@ -158,7 +158,7 @@ void check_point_load(int *array ){
 
     for (int i=0; i<n;i++){
         array[i]=1;
-        cout<<array[i];
+       
 
     }
 }
@@ -200,7 +200,7 @@ Army *a = new Army (30,30,10);// creating a Army pointer to an object of the Arm
                             
 
 // menu
-cout<<"menue"<<endl;
+cout<<"menu"<<endl;
 cout<<"a: play new game"<<endl;
 cout<< "b: load game"<<endl;
 cout<<"c: exit"<<endl;
@@ -278,7 +278,7 @@ check_point=-1;
         if (check[check_point]!=1){
              banker.speak("should we build more churches?");
              
-               cout<<check_point;
+              
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -561,7 +561,7 @@ check_point=-1;
         if (check[check_point]!=1){
              mat.speak("Rumors say that a demon is learking can the Army investigate?");
              
-               cout<<check_point;
+         
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -618,7 +618,7 @@ check_point=-1;
         if (check[check_point]!=1){
              queen.speak("A man looked at me weird off with his head?");
              
-               cout<<check_point;
+           
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -675,7 +675,7 @@ check_point=-1;
         if (check[check_point]!=1){
              general.speak("Your Majesty the Myra Kingdom has declared war are we taking up arms?");
              
-               cout<<check_point;
+              
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -733,7 +733,7 @@ check_point=-1;
         if (check[check_point]!=1){
              doctor.speak("Sorry your Majesty your great grandmother died should we hold the funeral now?");
              
-               cout<<check_point;
+             
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -794,7 +794,7 @@ check_point=-1;
         if (check[check_point]!=1){
              general.speak("Where running out of provisions! Please provide funding?");
              
-               cout<<check_point;
+            
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -850,7 +850,7 @@ check_point=-1;
         if (check[check_point]!=1){
              mat.speak("We won the war shall we hold a parade?");
              
-               cout<<check_point;
+               
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -905,7 +905,7 @@ check_point=-1;
         if (check[check_point]!=1){
              pope.speak("There are a lot of sick patients can we get an investment for treatment?");
              
-               cout<<check_point;
+    
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -962,7 +962,7 @@ check_point=-1;
         if (check[check_point]!=1){
              mat.speak("Your Majesty the farms are being raided and people are starving can we send the army?");
              
-               cout<<check_point;
+        
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -1009,4 +1009,15 @@ check_point=-1;
 
 
     save_game(p,c,w,a);
+
+
+
+
+
+    //IMPORTANT this section frees up memory do not add anything below please
+    delete answer; // frees up the memory for answer
+    delete p;// frees up the memory for people object
+    delete c;// frees up the memory for church object
+    delete a;// frees up the memory for army object
+    delete [] check;// frees up the memory for check array
 }
