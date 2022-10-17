@@ -2,6 +2,7 @@
 # include <string>
 # include "power.cpp"
 # include "person.cpp"
+
 # include <stdlib.h>
 # include <fstream>
 using namespace std;
@@ -155,8 +156,9 @@ void check_point_load(int *array ){
   
     inputFile >> n;
 
-    for (int i=0; i<n+1;i++){
+    for (int i=0; i<n;i++){
         array[i]=1;
+        cout<<array[i];
 
     }
 }
@@ -214,6 +216,9 @@ while (while_stopper==1){
    
 if (*option=='a' && option[1]==0){
     cout<<"new game created"<<endl;
+    for (int i=0;i<70;i++){ // intiliases the array of checkpoints
+        check[i]=0;
+    }
     while_stopper=0;
 }
 else if (*option=='b'&& option[1]==0){
@@ -249,7 +254,7 @@ cout<<endl;
 
 cout<<"welcome  to the game"<<endl;
 int check_point;// is used to recoginse the placment of the game progression.
-check_point=-1;
+
 char *answer= new char(3);
 
     advisor mat ("mat","people's speaker",15);
@@ -267,10 +272,12 @@ char *answer= new char(3);
 
 // sceario 1
 check_point=-1;
-    check_point= check_point+1; // used to recoginse the game progression  
+     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
         if (check[check_point]!=1){
              banker.speak("should we build more churches?");
+             
+               cout<<check_point;
          save_game(p,c,w,a);
     cin>>answer;
     }
@@ -282,7 +289,7 @@ check_point=-1;
             c->change_wealth_of_pop(25);
             update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
-            check[check_point]=1;
+        check_point_input(check,check_point); 
             
             while_stopper=0;
             
@@ -292,9 +299,19 @@ check_point=-1;
             c->set_king_popularity(13);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
-            check[check_point]=1;
+            check_point_input(check,check_point); 
+    
+            while_stopper=0;}
+        
+        else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
             while_stopper=0;
-        }else{
+            return 0;
+
+        }
+        else{
         cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
@@ -305,15 +322,18 @@ check_point=-1;
 
     save_game(p,c,w,a);
 
+    
 
+ 
    
 // sceario 1
-    check_point= check_point+1; // used to recoginse the game progression
-    while_stopper=1;
 
+    while_stopper=1;
+   check_point= check_point+1; // used to recoginse the game progression 
 
     if (check[check_point]!=1){
            queen.speak("It is your birthday ! lets throw a massive party !");
+         
     save_game(p,c,w,a);
     cin>>answer;
     }
@@ -324,21 +344,22 @@ check_point=-1;
             w->set_weatlh(11);
             update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
-            
+                check_point_input(check,check_point); 
             while_stopper=0;
 
-                check[check_point]=1;
+    
             
             
 
-        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
-            c->set_king_popularity(23);
-             update_stats(p,c,w,a);
+        }  else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
+       check_point_input(check,check_point); 
             while_stopper=0;
-           
-             check[check_point]=1;
-        }else{
+            return 0;
+
+        }
+        else{
              cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
@@ -346,16 +367,19 @@ check_point=-1;
             cin>>answer;
         }
 
+        check_point_input(check,check_point);
     
 
 
-      
+
+         check_point= check_point+1; // used to recoginse the game progression 
 // sceario 1
-check_point= check_point+1; // used to recoginse the game progression
+
     while_stopper=1;
 
          if (check[check_point]!=1){ // checks if the user was at this point when they left the game
             doctor.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
+            
             save_game(p,c,w,a);
     cin>>answer;
     }
@@ -367,23 +391,32 @@ check_point= check_point+1; // used to recoginse the game progression
             w->set_weatlh(3);
             update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
-            
+            check_point_input(check,check_point); 
             while_stopper=0;
            
-                check[check_point]=1;
+           
             
             
 
         }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             p->change_employment(22);
             p->change_food_avaliable(1);
-
+        check_point_input(check,check_point); 
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             while_stopper=0;
              
-                check[check_point]=1;
-        }else{
+         }
+
+       else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+            check_point_input(check,check_point); 
+            while_stopper=0;
+            return 0;
+
+        }
+        else{
             cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
@@ -393,17 +426,19 @@ check_point= check_point+1; // used to recoginse the game progression
 
             save_game(p,c,w,a);
 
+    check_point_input(check,check_point);
+    
 
 
    
 // sceario 1
-check_point= check_point+1; // used to recoginse the game progressio
-    while_stopper=1;
 
+    while_stopper=1;
+   check_point= check_point+1; // used to recoginse the game progression 
 
    if (check[check_point]!=1){ // checks if the user was at this point when they left the game
                general.speak("SIR ! there is a widespread of a suspcious disease, we should investiagte");
-
+      
             save_game(p,c,w,a);
     cin>>answer;
     }
@@ -414,23 +449,31 @@ check_point= check_point+1; // used to recoginse the game progressio
             w->set_weatlh(3);
             update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
-            
+                check_point_input(check,check_point); 
             while_stopper=0;
            
-                check[check_point]=1;
             
             
 
         }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
             p->change_employment(22);
             p->change_food_avaliable(1);
-
+    check_point_input(check,check_point); 
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             while_stopper=0;
       
-                check[check_point]=1;
-        }else{
+        }
+
+     else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            while_stopper=0;
+            return 0;
+
+        }
+        else{
             cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
           cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
@@ -439,11 +482,8 @@ check_point= check_point+1; // used to recoginse the game progressio
         }
     save_game(p,c,w,a);
     check_point_input(check,check_point);
-    // for (int i=0; i<check_point+1;i++){
-    //     cout<<check[i];
-    // }
+    
 
-    check_point_load(check);
     
     
 
