@@ -70,7 +70,7 @@ int Entertainmnet;
 int Food_avaliable;
 
 people(int Employment_new_Value, int Entertainmnet_new_Value, 
-int Food_avaliable_new_Value): power(50,50), Employment(Employment_new_Value),Entertainmnet(Entertainmnet_new_Value)
+int Food_avaliable_new_Value): power(10,10), Employment(Employment_new_Value),Entertainmnet(Entertainmnet_new_Value)
 ,Food_avaliable(Food_avaliable_new_Value){} // intilisasing the constructor
 
 people(): people(25,25,25){}
@@ -128,7 +128,7 @@ public :
 int number_of_churches;
 int wealth_of_pop;
 // intlisases the church constructors 
-church (int number, int wealth): power(50,50),number_of_churches(number), wealth_of_pop(wealth){}
+church (int number, int wealth): power(10,10),number_of_churches(number), wealth_of_pop(wealth){}
 
 church (): church(100,100){}
 
