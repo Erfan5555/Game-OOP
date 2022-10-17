@@ -266,6 +266,7 @@ char *answer= new char(3);
      advisor general ("james","general", 50);
      advisor banker ("Sir francis", "banker",15 );
      advisor doctor ("Dr Oz", "Doctor",0);
+     advisor pope ("Pope Benedict", "Pope", 50);
 
    
    
@@ -627,7 +628,7 @@ check_point=-1;
         if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
           p->Rebel();
           a->set_king_popularity(5);
-          a->change_up();
+          a->change_Down();
           c->set_king_popularity(10);
 
             update_stats(p,c,w,a);
@@ -694,8 +695,12 @@ check_point=-1;
             
 
         }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
-           a->kill_king();
-           p->kill_king();
+           a->change_num_of_troops(0);
+           a->change_available_food(0);
+           a->change_quality_of_weapons(0);
+           p->change_employment(0);
+           p->change_food_avaliable(0);
+           p->change_entertainment(0);
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             check_point_input(check,check_point); 
@@ -736,10 +741,7 @@ check_point=-1;
     while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
   
         if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes
-        if (w->wealth_of_king<20)
-        {
-            w->kill_king();
-        }
+        
          
            w->set_weatlh(5);
            p->change_Down();
@@ -816,6 +818,173 @@ check_point=-1;
         }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
        a->Rebel();
        w->change_up();
+             update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+            check_point_input(check,check_point); 
+    
+            while_stopper=0;}
+        
+        else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            while_stopper=0;
+            return 0;
+
+        }
+        else{
+        cout<<"type either  y for yes or n for no \n";
+            cin.clear(); // clears the string errors in buffer
+          cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
+          // buffer
+            cin>>answer;
+        }
+
+
+    save_game(p,c,w,a);
+
+      // sceario 11
+check_point=-1;
+     check_point= check_point+1; // used to recoginse the game progression 
+    while_stopper=1;
+        if (check[check_point]!=1){
+             mat.speak("We won the war shall we hold a parade?");
+             
+               cout<<check_point;
+         save_game(p,c,w,a);
+    cin>>answer;
+    }
+     
+    while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
+  
+        if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
+          w->change_Down();
+          p->change_up();
+          a->set_king_popularity(15);
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            
+            while_stopper=0;
+            
+            
+
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
+       a->change_Down();
+       p->change_Down();
+       w->change_up();
+             update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+            check_point_input(check,check_point); 
+    
+            while_stopper=0;}
+        
+        else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            while_stopper=0;
+            return 0;
+
+        }
+        else{
+        cout<<"type either  y for yes or n for no \n";
+            cin.clear(); // clears the string errors in buffer
+          cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
+          // buffer
+            cin>>answer;
+        }
+
+
+    save_game(p,c,w,a);
+
+      // sceario 12
+check_point=-1;
+     check_point= check_point+1; // used to recoginse the game progression 
+    while_stopper=1;
+        if (check[check_point]!=1){
+             pope.speak("There are a lot of sick patients can we get an investment for treatment?");
+             
+               cout<<check_point;
+         save_game(p,c,w,a);
+    cin>>answer;
+    }
+     
+    while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
+  
+        if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
+          c->change_up();
+          c->set_king_popularity(15);
+          p->change_up();
+          w->change_Down();
+          w->set_king_popularity(5);
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            
+            while_stopper=0;
+            
+            
+
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
+       c->change_Down();
+       p->change_Down();
+             update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+            check_point_input(check,check_point); 
+    
+            while_stopper=0;}
+        
+        else if(*answer=='e'&& answer [1]==0){ // exits teh game
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            while_stopper=0;
+            return 0;
+
+        }
+        else{
+        cout<<"type either  y for yes or n for no \n";
+            cin.clear(); // clears the string errors in buffer
+          cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
+          // buffer
+            cin>>answer;
+        }
+
+
+    save_game(p,c,w,a);
+
+
+      // sceario 13
+check_point=-1;
+     check_point= check_point+1; // used to recoginse the game progression 
+    while_stopper=1;
+        if (check[check_point]!=1){
+             mat.speak("Your Majesty the farms are being raided and people are starving can we send the army?");
+             
+               cout<<check_point;
+         save_game(p,c,w,a);
+    cin>>answer;
+    }
+     
+    while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
+  
+        if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes 
+         p->change_up();
+         w->change_Down();
+         a->change_Down();
+          w->set_king_popularity(5);
+            update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+        check_point_input(check,check_point); 
+            
+            while_stopper=0;
+            
+            
+
+        }else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
+       p->Rebel();
+       
              update_stats(p,c,w,a);
             check_end_game(p,c,w,a);
             check_point_input(check,check_point); 
