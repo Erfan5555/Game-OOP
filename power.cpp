@@ -1,6 +1,6 @@
 # include <iostream>
 # include <string>
-
+#include <cstdlib>
 using namespace std;
 
 // abstract class since the method rebel and kill king is not implemented.
@@ -15,15 +15,19 @@ class show_all_variables { // intended for programmers only
 
 
 class power:public show_all_variables{
-protected :
-int King_Popularity;
-int Overall_value;
-bool game_switch; // This ends the king's life
 
 public:
+int King_Popularity;
+int *Overall_value=new int(2);
+bool game_switch; // This ends the king's life
 
-power (int popularity, int satsifactionValue): King_Popularity(popularity),
-Overall_value(satsifactionValue){game_switch=true;} // intlisaed the constructor of 
+power (int popularity, int satsifactionValue)
+{
+    game_switch=true;
+    King_Popularity=popularity;
+    *Overall_value=satsifactionValue;
+    
+    } // intlisaed the constructor of 
 //power
 
 power(): power(100,100){game_switch=true;} // intliases the constructor if no values are inputed
@@ -38,7 +42,7 @@ virtual int set_overall_value()=0; //Overall value is the number seen
 
 void show_overall_var(){
   
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
 
 void set_king_popularity(int new_value){
@@ -51,16 +55,20 @@ void kill_king(){ // INSERT THE GAME END FUNCTION
 }
 
 
+
+
 };
 
 
 class people :public power{
-protected :
+
+
+
+public :
 int Employment;
 int Entertainmnet;
 int Food_avaliable;
 
-public :
 people(int Employment_new_Value, int Entertainmnet_new_Value, 
 int Food_avaliable_new_Value): power(50,50), Employment(Employment_new_Value),Entertainmnet(Entertainmnet_new_Value)
 ,Food_avaliable(Food_avaliable_new_Value){} // intilisasing the constructor
@@ -75,7 +83,7 @@ void Rebel ( ){ // polymorphism here
 
 int set_overall_value(){ // 
    int value= Employment+ Entertainmnet+Food_avaliable+King_Popularity;
-    Overall_value= value;
+    *Overall_value= value;
     if (value<0){
         value=0;
         game_switch=false; // ends the king's life and start a new game.
@@ -86,6 +94,19 @@ int set_overall_value(){ //
     }
     
     return value;
+}
+
+void change_up(){
+    srand((unsigned) time(NULL));
+    this->Employment = Employment + (1+(rand()%15));
+this->Entertainmnet = Entertainmnet + (1+(rand()%15));
+this->Food_avaliable = Food_avaliable + (1+(rand()%15));
+}
+void change_Down(){
+    srand((unsigned) time(NULL));
+    this->Employment = Employment - (1+(rand()%15));
+this->Entertainmnet = Entertainmnet - (1+(rand()%15));
+this->Food_avaliable = Food_avaliable - (1+(rand()%15));
 }
 
 void change_employment (int Employment ){
@@ -101,6 +122,9 @@ void change_food_avaliable (int Food_avaliable){
 }
 
 
+
+
+
 void show_vars(){
     cout<<"employment is:"<<Employment<<endl;
     cout<<"avaiable food is:"<<Food_avaliable<<endl;
@@ -112,15 +136,26 @@ void show_vars(){
 };
 
 class church : public power {
-protected:
+
+public :
 int number_of_churches;
 int wealth_of_pop;
- 
-public :
 // intlisases the church constructors 
 church (int number, int wealth): power(50,50),number_of_churches(number), wealth_of_pop(wealth){}
 
 church (): church(100,100){}
+
+void change_up(){
+    srand((unsigned) time(NULL));
+    this->number_of_churches = number_of_churches + (1+(rand()%25));
+this->wealth_of_pop = wealth_of_pop + (1+(rand()%25));
+
+}
+void change_Down(){
+    srand((unsigned) time(NULL));
+      this->number_of_churches = number_of_churches - (1+(rand()%25));
+this->wealth_of_pop = wealth_of_pop - (1+(rand()%25));
+}
 
 void change_number_of_churches (int new_number){
 this->number_of_churches= new_number;
@@ -140,7 +175,7 @@ void change_wealth_of_pop(int new_wealth){
     int set_overall_value(){ // 
 
     int value= number_of_churches+wealth_of_pop;
-    Overall_value= value;
+    *Overall_value= value;
 
     if (value<0){
         value=0;
@@ -153,15 +188,15 @@ void change_wealth_of_pop(int new_wealth){
     return value;
 }
  int show_overall_value(){
-        cout<<"the overall value is:"<< Overall_value <<endl;
-        return Overall_value;
+        cout<<"the overall value is:"<< *Overall_value <<endl;
+        return *Overall_value;
     }
 
     void show_vars(){
     cout<<"church number value is:"<<number_of_churches<<endl;
     cout<<"wealth of the pop is:"<<wealth_of_pop<<endl;
    
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
 
   
@@ -171,13 +206,13 @@ void change_wealth_of_pop(int new_wealth){
 
 
 class Army: public power {
-    protected:
+    
+    public:
+
     int numb_of_troops;
     int quality_of_weapons;
     int food_avaliblity;
 
-
-    public:
     Army(int numb_of_troops, int quality_of_weapons,int food_avaiable):power(25,50), numb_of_troops(numb_of_troops),
     quality_of_weapons(quality_of_weapons),food_avaliblity(food_avaiable){}
 
@@ -189,7 +224,7 @@ class Army: public power {
 
    int set_overall_value(){
         int value=numb_of_troops+quality_of_weapons+food_avaliblity;
-       Overall_value= value;
+       *Overall_value= value;
 
         if (value<0){
         value=0;
@@ -201,28 +236,61 @@ class Army: public power {
     }
     return value;
     }
+void change_up(){
+    srand((unsigned) time(NULL));
+    this->numb_of_troops = numb_of_troops + (1+(rand()%25));
+this->quality_of_weapons = quality_of_weapons + (1+(rand()%25));
+this->food_avaliblity = food_avaliblity + (1+(rand()%25));
+}
+void change_Down(){
+    srand((unsigned) time(NULL));
+    this->numb_of_troops = numb_of_troops - (1+(rand()%25));
+this->quality_of_weapons = quality_of_weapons - (1+(rand()%25));
+this->food_avaliblity = food_avaliblity - (1+(rand()%25));
+}
+    void change_num_of_troops(int new_number){
+        numb_of_troops=new_number;
+    }
+
+    void change_quality_of_weapons(int new_quality){
+        quality_of_weapons=new_quality;
+    }
+
+    void change_available_food(int new_value){
+        food_avaliblity=new_value;
+    }
 
     int show_overall_value(){
-        cout<<"the overall value is:"<< Overall_value <<endl;
-               return Overall_value;
+        cout<<"the overall value is:"<< *Overall_value <<endl;
+               return *Overall_value;
     }
     void show_vars(){
     cout<<"number of troops is:"<<numb_of_troops<<endl;
     cout<<" Quality of weapons is:"<<quality_of_weapons<<endl;
      cout<<" Avaiable food is:"<<food_avaliblity<<endl;
     
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 } 
 };
 
 class wealth:public power{
-    protected :
-    int wealth_of_king;
 
+   
     public:
+     int wealth_of_king;
+
     wealth(int wealth): power(50,50), wealth_of_king(wealth){}; // intilisaing the values
     wealth(): wealth(50){}; // defult constructor with no input values
-    
+    void change_up(){
+    srand((unsigned) time(NULL));
+    this->wealth_of_king = wealth_of_king + (1+(rand()%25));
+
+}
+void change_Down(){
+    srand((unsigned) time(NULL));
+    this->wealth_of_king = wealth_of_king - (1+(rand()%25));
+
+}
     void set_weatlh(int new_wealth){
         wealth_of_king=new_wealth;
     }
@@ -233,7 +301,7 @@ class wealth:public power{
     int set_overall_value(){
         
           int value=wealth_of_king;
-       Overall_value= value;
+       *Overall_value= value;
 
         if (value<0){
         value=0;
@@ -251,21 +319,7 @@ class wealth:public power{
     cout<<"wealth of the king is:"<<wealth_of_king<<endl;
     
     
-    cout<<"overall value is: "<<Overall_value<<endl;
+    cout<<"overall value is: "<<*Overall_value<<endl;
 }
     
 };
-
-
-class card: public people, public Army, public church, public wealth {
-public:
-string text_scenario;
-
-void show_text(string text){
-    text_scenario=text;
-    cout<<text_scenario<<endl;
-}
-
-
-};
-

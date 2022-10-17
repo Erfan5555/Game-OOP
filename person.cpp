@@ -41,7 +41,7 @@ void dead_advisor (){
 
 
 void speak(string text){
-    cout<<text<<endl;
+    cout<<name<<" : "<<text<<endl;
 }
 
 void show_face(string face){ // visulisastation here
@@ -121,8 +121,3 @@ void show_face(){ // visulisastation here
     cout<<"imagine you are seeing a face right now"<<endl;
 }
 };
-
-// int main(){
-
-// }
-
