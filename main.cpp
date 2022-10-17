@@ -12,35 +12,35 @@ void update_stats(people *p, church *c, wealth *w, Army *a){ // function to give
 // the stats. it updates the stats and printes them out.
     int value;
     value= p->set_overall_value();
-    value= value/10;
-    cout<<"people:";
-    for (int i=0; i<value;i++){
-        cout<<"-";
-    }
+    // value= value/10;
+    cout<<"people:"<<value;
+    // for (int i=0; i<value;i++){
+    //     cout<<"-";
+    // }
     cout<<endl;
 
     value= c->set_overall_value();
-    value= value/10;
-    cout<<"church:";
-    for (int i=0; i<value;i++){
-        cout<<"-";
-    }
+    // value= value/10;
+    cout<<"church:"<<value;
+    // for (int i=0; i<value;i++){
+    //     cout<<"-";
+    // }
     cout<<endl;
 
     value= w->set_overall_value();
-    value= value/10;
-    cout<<"wealth:";
-    for (int i=0; i<value;i++){
-        cout<<"-";
-    }
+    // value= value/10;
+    cout<<"wealth:"<<value;
+    // for (int i=0; i<value;i++){
+    //     cout<<"-";
+    // }
     cout<<endl;
 
       value= a->set_overall_value();
-    value= value/10;
-    cout<<"Army  :";
-    for (int i=0; i<value;i++){
-        cout<<"-";
-    }
+    // value= value/10;
+    cout<<"Army  :"<<value;
+    // for (int i=0; i<value;i++){
+    //     cout<<"-";
+    // }
     cout<<endl;
  }
 
