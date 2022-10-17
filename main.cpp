@@ -359,6 +359,14 @@ check_point=-1;
             return 0;
 
         }
+
+        else if (*answer=='n' && answer [1]==0){ //if answer is no, it will cause ceratin changes 
+            c->set_king_popularity(13);
+             update_stats(p,c,w,a);
+            check_end_game(p,c,w,a);
+            check_point_input(check,check_point); 
+    
+            while_stopper=0;}
         else{
              cout<<"type either  y for yes or n for no";
             cin.clear(); // clears the string errors in buffer
