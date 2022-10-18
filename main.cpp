@@ -7,6 +7,9 @@
 #include <limits>
 using namespace std;
 
+// Contains the storyline, start the game by running the makefiles then selecting either a new game or load game (if you have played it
+// before) through typing a or b. Game data is saved and loaded automatically after each question. The objective of the game is that
+// you try to be king as long as possible without allowng any of the powers reaching down to zero.
 
 int main (){
     int *check= new int [70]; // used to track the progression of the game and check point
@@ -21,7 +24,7 @@ int main (){
             "__  __/  __  /| |\n"
             "_  /___  _  ___ |\n"
             "/_____/  /_/  |_| "<<endl;
-// menu
+// menu, user have to type either a, b or c to select options.
     cout<<"menu"<<endl;
     cout<<"a: play new game"<<endl;
     cout<< "b: load game"<<endl;
