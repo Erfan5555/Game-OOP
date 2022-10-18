@@ -243,7 +243,7 @@ int main (){
     while_stopper=1;
     if (check[check_point]!=1){
         banker.speak("Should we sell the Holy Sword?");  
-        cout<<check_point;
+        
         file.save_game(p,c,w,a);
         cin>>answer;
     }
