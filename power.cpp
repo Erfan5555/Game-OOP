@@ -3,9 +3,16 @@
 #include <cstdlib>
 #include <fstream>
 using namespace std;
+
+// Contains the pillars of soceity, church, army, people and wealth which all are inehreted from power.
+// Contains the class stats responsible for updating and showing game variables of differnet objects.
+
+
+
 // abstract class since the method rebel and kill king is not implemented.
 // No object of this class is intendeded to be instantiated.
 
+// Shows the value of differnet variables.
 class show_all_variables { // intended for programmers only 
     public:
         virtual void show_vars()=0;
