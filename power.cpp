@@ -353,6 +353,21 @@ class stats{ // provides the functions for displaying stats and save files
             int value_of_wealth = w-> set_overall_value();
             int value_of_army= a->set_overall_value();
             if (value_of_army==0 || value_of_people==0 ||  value_of_wealth==0|| value_of_church==0){
+                cout<<"Sadly, your lack of ";
+                if(value_of_army==0){
+                    cout<<"an army led to outsiders invading and overthrowing you."<<endl;
+                }
+                if(value_of_people==0){
+                    cout<<"popularity led to a peasant army rose dissatisfied with your rule and executed you."<<endl;
+                }
+                if(value_of_wealth==0){
+                    cout<<"money led to all your servants leaving you to fend for yourself."<<endl;
+                }
+                if(value_of_church==0){
+                    cout<<"faith led to the church and their followers over throwing their godless king."<<endl;
+                }
+                cout<<endl;
+                cout<<"Try again"<<endl;
                 exit(0);
             }
         }
