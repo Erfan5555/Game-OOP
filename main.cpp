@@ -238,7 +238,7 @@ int main (){
     file.save_game(p,c,w,a);
     file.check_point_input(check,check_point);
 // scenario 5
-    check_point=-1;
+
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -284,7 +284,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 6
-    check_point=-1;
+
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -329,7 +329,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 7
-    check_point=-1;
+
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -373,7 +373,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 8
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -418,7 +418,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 9
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -463,7 +463,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 10
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -506,7 +506,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 11
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -549,7 +549,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 12
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -593,7 +593,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 13
-    check_point=-1;
+
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -635,7 +635,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 14
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -677,7 +677,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 15
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -722,7 +722,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 16
-    check_point=-1;
+  
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -762,7 +762,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 17
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -803,7 +803,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 18
-    check_point=-1;
+
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -846,7 +846,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 19
-    check_point=-1;
+  
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -887,7 +887,7 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 20
-    check_point=-1;
+    
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -934,7 +934,7 @@ int main (){
     cout<<endl;
     cout<<endl;
 // scenario 21
-    check_point=-1;
+   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
