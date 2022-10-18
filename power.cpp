@@ -13,6 +13,7 @@ using namespace std;
 // No object of this class is intendeded to be instantiated.
 
 // Shows the value of differnet variables.
+
 class show_all_variables { // intended for programmers only 
     public:
         virtual void show_vars()=0;
@@ -152,15 +153,15 @@ class church : public power { // creates church class
         }
 };
 
-class Army: public power { // creates army class
+class army: public power { // creates army class
     public:
         int num_troops; // defines army variables
         int weapon_quality;
         int food_avaliblity;
         // initialises army constructors
-        Army(int num_troops, int weapon_quality,int food_avaiable):power(25,50), num_troops(num_troops),
+        army(int num_troops, int weapon_quality,int food_avaiable):power(25,50), num_troops(num_troops),
         weapon_quality(weapon_quality),food_avaliblity(food_avaiable){}
-        Army (): Army(25,25,25){};
+        army (): army(25,25,25){};
         void Rebel(){ // special event
             num_troops = num_troops-50;
         }
@@ -244,16 +245,28 @@ class wealth : public power{
             return value;
         }
         void show_vars(){ // display variables
-            cout<<"the wealth of the king is: "<<king_wealth<<endl;
+            cout<<"The wealth of the king is: "<<king_wealth<<endl;
             cout<<"Overall value is: "<<*Overall_value<<endl;
         }
 };
-
+class delete_class{ // deletes stuff cause 1 person thought it wasn't allowed in main
+    public:
+        void delete_objects(people *p, church *c, wealth *w, army *a,char *answer, int *check){
+                //IMPORTANT this section frees up memory do not add anything below please
+            delete answer; // frees up the memory for answer
+            delete p;// frees up the memory for people object
+            delete c;// frees up the memory for church object
+            delete w;// frees up the memory for wealth object
+            delete a;// frees up the memory for army object
+            delete [] check;// frees up the memory for check array
+        }
+};
 class stats{ // provides the functions for displaying stats and save files
     public:
-        void update_stats(people *p, church *c, wealth *w, Army *a){ // function to give out all
+        void update_stats(people *p, church *c, wealth *w, army *a){ // function to give out all
             // the stats. it updates the stats and prints them out.
             int value;
+            cout<<endl;
             value = p->set_overall_value();
             cout<<"People: "<<value;
             cout<<endl;
@@ -268,7 +281,7 @@ class stats{ // provides the functions for displaying stats and save files
             cout<<endl;
         }
 
-        void save_game(people *p, church *c, wealth *w, Army *a){ // creates save file
+        void save_game(people *p, church *c, wealth *w, army *a){ // creates save file
 
             // gets the varaibles that make the overall value for each power.
         
@@ -298,7 +311,7 @@ class stats{ // provides the functions for displaying stats and save files
         }
         
         // loads the game data.
-        void load_game(people *p, church *c, wealth *w, Army *a){
+        void load_game(people *p, church *c, wealth *w, army *a){
             // reads the values from a file called moarch- this saves the game
             ifstream inputFile;
             inputFile.open("monarch.txt");
@@ -318,7 +331,7 @@ class stats{ // provides the functions for displaying stats and save files
             cout<<num10<<endl;
             // c=new church (num2/2,num2/2);
             //  w=new wealth (num3);
-            //  a=new Army (num4/3,num4/3,num4/3) ;
+            //  a=new army (num4/3,num4/3,num4/3) ;
             // we divide the overall values between the variables
             // of the people to get to the same overall value when the game was intially saved. 
             int value; // assigns values from file
@@ -354,7 +367,7 @@ class stats{ // provides the functions for displaying stats and save files
         }
 
         // terminates the game if any of the values are zero.
-        void check_end_game(people *p, church *c, wealth *w, Army *a){
+        void check_end_game(people *p, church *c, wealth *w, army *a){
             int value_of_people= p->set_overall_value();
             int value_of_church= c->set_overall_value();
             int value_of_wealth = w-> set_overall_value();

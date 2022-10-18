@@ -7,25 +7,25 @@
 #include <limits>
 using namespace std;
 
-// Contains the storyline, start the game by running the makefiles then selecting either a new game or load game (if you have played it
-// before) through typing a or b. Game data is saved and loaded automatically after each question. The objective of the game is that
-// you try to be king as long as possible without allowng any of the powers reaching down to zero.
 
 int main (){
     int *check= new int [70]; // used to track the progression of the game and check point
     people* p = new people(25,25,25); // creating a people pointer to an object of the people
     church *c= new church(7,27);// creating a church  pointer to an object of the church
     wealth *w = new wealth(25); // creating a wealth pointer to an object of the wealth
-    Army *a = new Army (30,30,10);// creating a Army pointer to an object of the Army
+    army *a = new army (30,30,10);// creating a army pointer to an object of the army
     stats file; // imports file and stats functions
-    cout<<"-----------------------------------"<<endl;
-    cout <<"  ________________ \n"
-            "___  ____/__    |\n"
-            "__  __/  __  /| |\n"
-            "_  /___  _  ___ |\n"
-            "/_____/  /_/  |_| "<<endl;
-// menu, user have to type either a, b or c to select options.
-    cout<<"menu"<<endl;
+// menu
+    cout<<endl;
+    cout <<".___  ___.   ______   .__   __.      ___      .______      ______  __    __"<<endl;
+    cout<<"|   \\/   |  /  __  \\  |  \\ |  |     /   \\     |   _  \\    /      ||  |  |  |"<<endl;
+    cout<<"|  \\  /  | |  |  |  | |   \\|  |    /  ^  \\    |  |_)  |  |  ,----'|  |__|  |"<<endl;
+    cout<<"|  |\\/|  | |  |  |  | |  . `  |   /  /_\\  \\   |      /   |  |     |   __   |"<<endl;
+    cout<<"|  |  |  | |  `--'  | |  |\\   |  /  _____  \\  |  |\\  \\--.|  `----.|  |  |  |"<<endl;
+    cout<<"|__|  |__|  \\______/  |__| \\__| /__/     \\__\\ | _| `.___| \\______||__|  |__|"<<endl;
+    cout<<endl;
+    cout<<"You are playing as a king who can not have any of their responsabilities to drop to 0"<<endl;
+    cout<<"    M E N U"<<endl;
     cout<<"a: play new game"<<endl;
     cout<< "b: load game"<<endl;
     cout<<"c: exit"<<endl;
@@ -38,7 +38,7 @@ int main (){
     while (while_stopper==1){ 
         if (*option=='a' && option[1]==0){ // new game
             cout<<"New game created"<<endl;
-            for (int i=0;i<70;i++){ // intiliases the array of checkpoints
+            for (int i=0;i<70;i++){ // intialises the array of checkpoints
                 check[i]=0;
             }
             while_stopper=0;
@@ -69,8 +69,7 @@ int main (){
     cout<<"type 'y' or 'n' for yes or no"<<endl;
     int check_point;// is used to recoginse the placment of the game progression.
     char *answer= new char(3);
-    advisor mat ("mat","people's speaker",15);
-    mat.show_face(":>");
+    advisor mat ("Matt","people's speaker",15);
     advisor queen ("Mary","Queen",50);
     advisor general ("James","General", 50);
     advisor banker ("Sir Francis", "Banker",15 );
@@ -241,7 +240,6 @@ int main (){
     file.save_game(p,c,w,a);
     file.check_point_input(check,check_point);
 // scenario 5
-
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -287,11 +285,10 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 6
-
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
-        mat.speak("Rumors say that a demon is learking can the Army investigate?");
+        mat.speak("Rumors say that a demon is learking can the army investigate?");
         file.save_game(p,c,w,a);
         cin>>answer;
     }
@@ -332,7 +329,6 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 7
-
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -376,7 +372,6 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 8
-   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -421,7 +416,6 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 9
-   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -466,11 +460,10 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 10
-   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
-        general.speak("Where running out of provisions! Please provide funding?");  
+        general.speak("We are running out of provisions! Please provide funding?");  
         file.save_game(p,c,w,a);
         cin>>answer;
     }
@@ -552,7 +545,6 @@ int main (){
     }
     file.save_game(p,c,w,a);
 // scenario 12
-   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -937,7 +929,6 @@ int main (){
     cout<<endl;
     cout<<endl;
 // scenario 21
-   
     check_point= check_point+1; // used to recoginse the game progression 
     while_stopper=1;
     if (check[check_point]!=1){
@@ -985,11 +976,7 @@ int main (){
         // buffer
         cin>>answer;
     }
+    delete_class del; // adds del class cause 1 person thought it wasn't allowed in main
     file.save_game(p,c,w,a);
-    //IMPORTANT this section frees up memory do not add anything below please
-    delete answer; // frees up the memory for answer
-    delete p;// frees up the memory for people object
-    delete c;// frees up the memory for church object
-    delete a;// frees up the memory for army object
-    delete [] check;// frees up the memory for check array
+    del.delete_objects(p,c,w,a,answer,check); // dynamically deletes
 }
