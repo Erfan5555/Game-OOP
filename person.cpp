@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
 using namespace std;
+// Contains the abstract class of person, and class of advisor then king which is inhernted from advisor and spirit which is inherted
+// from king.
+
+
+
 // abstract class of person, person will not have any objects in the game.
-// show_face() and speak() are virtual functions. i.e implemented in the derived classes.
+//  speak() is virtual functions. i.e implemented in the derived classes.
 
 class person { //base class to be built upon
     protected:
