@@ -147,14 +147,14 @@ church (): church(100,100){}
 
 void change_up(){
     srand((unsigned) time(NULL));
-    this->number_of_churches = number_of_churches + (1+(rand()%25));
-this->wealth_of_pop = wealth_of_pop + (1+(rand()%25));
+    this->number_of_churches = number_of_churches + (1+(rand()%20));
+this->wealth_of_pop = wealth_of_pop + (1+(rand()%20));
 
 }
 void change_Down(){
     srand((unsigned) time(NULL));
-      this->number_of_churches = number_of_churches - (1+(rand()%25));
-this->wealth_of_pop = wealth_of_pop - (1+(rand()%25));
+      this->number_of_churches = number_of_churches - (1+(rand()%20));
+this->wealth_of_pop = wealth_of_pop - (1+(rand()%20));
 }
 
 void change_number_of_churches (int new_number){
@@ -238,15 +238,15 @@ class Army: public power {
     }
 void change_up(){
     srand((unsigned) time(NULL));
-    this->numb_of_troops = numb_of_troops + (1+(rand()%25));
-this->quality_of_weapons = quality_of_weapons + (1+(rand()%25));
-this->food_avaliblity = food_avaliblity + (1+(rand()%25));
+    this->numb_of_troops = numb_of_troops + (1+(rand()%15));
+this->quality_of_weapons = quality_of_weapons + (1+(rand()%15));
+this->food_avaliblity = food_avaliblity + (1+(rand()%15));
 }
 void change_Down(){
     srand((unsigned) time(NULL));
-    this->numb_of_troops = numb_of_troops - (1+(rand()%25));
-this->quality_of_weapons = quality_of_weapons - (1+(rand()%25));
-this->food_avaliblity = food_avaliblity - (1+(rand()%25));
+    this->numb_of_troops = numb_of_troops - (1+(rand()%20));
+this->quality_of_weapons = quality_of_weapons - (1+(rand()%20));
+this->food_avaliblity = food_avaliblity - (1+(rand()%20));
 }
     void change_num_of_troops(int new_number){
         numb_of_troops=new_number;
@@ -283,12 +283,12 @@ class wealth:public power{
     wealth(): wealth(50){}; // defult constructor with no input values
     void change_up(){
     srand((unsigned) time(NULL));
-    this->wealth_of_king = wealth_of_king + (1+(rand()%25));
+    this->wealth_of_king = wealth_of_king + (1+(rand()%20));
 
 }
 void change_Down(){
     srand((unsigned) time(NULL));
-    this->wealth_of_king = wealth_of_king - (1+(rand()%25));
+    this->wealth_of_king = wealth_of_king - (1+(rand()%20));
 
 }
     void set_weatlh(int new_wealth){
