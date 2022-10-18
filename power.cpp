@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 // abstract class since the method rebel and kill king is not implemented.
 // No object of this class is intendeded to be instantiated.
@@ -238,5 +239,121 @@ class wealth : public power{
         void show_vars(){ // display variables
             cout<<"the wealth of the king is: "<<king_wealth<<endl;
             cout<<"Overall value is: "<<*Overall_value<<endl;
+        }
+};
+
+class stats{ // provides the functions for displaying stats and save files
+    public:
+        void update_stats(people *p, church *c, wealth *w, Army *a){ // function to give out all
+            // the stats. it updates the stats and prints them out.
+            int value;
+            value = p->set_overall_value();
+            cout<<"People: "<<value;
+            cout<<endl;
+            value= c->set_overall_value();
+            cout<<"Church: "<<value;
+            cout<<endl;
+            value= w->set_overall_value();
+            cout<<"Wealth: "<<value;
+            cout<<endl;
+            value= a->set_overall_value();
+            cout<<"Army: "<<value;
+            cout<<endl;
+        }
+
+        void save_game(people *p, church *c, wealth *w, Army *a){ // creates save file
+
+            // gets the varaibles that make the overall value for each power.
+        
+            int value_emp = p->employment;
+            int value_food_people= p->food;
+            int value_ent= p->entertainment;
+            int popularity = p->king_popularity;
+            int value_pope_wealth = c->pop_wealth;
+            int value_num_church = c->num_church;
+            int value_of_wealth = w-> king_wealth;
+            int value_num_troops = a->num_troops;
+            int value_equipment = a->weapon_quality;
+            int value_food_army = a->food_avaliblity;
+            // writes the values to a file called monarch - this saves the game
+            ofstream outputFile;
+            outputFile.open("monarch.txt");
+            outputFile<< value_emp<<endl;
+            outputFile<<value_food_people<<endl;
+            outputFile<<value_ent<<endl;
+            outputFile<<popularity<<endl;
+            outputFile<<value_pope_wealth<<endl;
+            outputFile<<value_num_church<<endl;
+            outputFile<<value_of_wealth<<endl;
+            outputFile<<value_num_troops<<endl;
+            outputFile<<value_equipment<<endl;
+            outputFile<<value_food_army <<endl;
+        }
+        
+        // loads the game data.
+        void load_game(people *p, church *c, wealth *w, Army *a){
+            // reads the values from a file called moarch- this saves the game
+            ifstream inputFile;
+            inputFile.open("monarch.txt");
+            // NOTE TO SELF Another way to apprach is to use the set_varibles of differnet powers
+            int  num1,num2,num3,num4,num5,num6,num7,num8,num9,num10; // num1,2,3,4 are overall values for each of the powers
+            inputFile>>num1>>num2>>num3>>num4>>num5>>num6>>num7>>num8>>num9>>num10;
+            // p=  new people(num1/3,num1/3,num1/3); 
+            cout<<num1<<endl;
+            cout<<num2<<endl;
+            cout<<num3<<endl;
+            cout<<num4<<endl;
+            cout<<num5<<endl;
+            cout<<num6<<endl;
+            cout<<num7<<endl;
+            cout<<num8<<endl;
+            cout<<num9<<endl;
+            cout<<num10<<endl;
+            // c=new church (num2/2,num2/2);
+            //  w=new wealth (num3);
+            //  a=new Army (num4/3,num4/3,num4/3) ;
+            // we divide the overall values between the variables
+            // of the people to get to the same overall value when the game was intially saved. 
+            int value; // assigns values from file
+            p->set_king_popularity(num1);
+            p->change_employment(num2);
+            p->change_entertainment(num3);
+            p->change_food(num4);
+            c->change_num_church(num5);
+            c->change_pop_wealth(num6);
+            w-> set_weatlh(num7);
+            a->change_available_food(num8);
+            a->change_num_of_troops(num9);
+            a->change_weapon_quality(num10);
+            update_stats(p,c,w,a);
+        }
+            
+        void check_point_input(int *array, int number_of_check_points){
+            ofstream outputFile;
+            outputFile.open("monarch checkpoint.txt"); // appends to the existing array
+            outputFile<<number_of_check_points;
+        }
+
+        void check_point_load(int *array ){
+            int number_of_integers;
+            int number= 0;
+            ifstream inputFile;
+            inputFile.open("monarch checkpoint.txt");    
+            int n;
+            inputFile >> n;
+            for (int i=0; i<n;i++){
+                array[i]=1;
+            }
+        }
+
+        // terminates the game if any of the values are zero.
+        void check_end_game(people *p, church *c, wealth *w, Army *a){
+            int value_of_people= p->set_overall_value();
+            int value_of_church= c->set_overall_value();
+            int value_of_wealth = w-> set_overall_value();
+            int value_of_army= a->set_overall_value();
+            if (value_of_army==0 || value_of_people==0 ||  value_of_wealth==0|| value_of_church==0){
+                exit(0);
+            }
         }
 };
