@@ -101,6 +101,8 @@ class people : public power{ // creates people class
             cout<<"Entertainment value is: "<<entertainment<<endl;
             cout<<"Overall value is: "<<Overall_value<<endl;
         }
+
+        ~people(){}
 };
 
 class church : public power { // creates church class
@@ -151,6 +153,7 @@ class church : public power { // creates church class
             cout<<"The wealth of the pop is: "<<pop_wealth<<endl;
             cout<<"Overall value is: "<<*Overall_value<<endl;
         }
+        ~church(){}
 };
 
 class army: public power { // creates army class
@@ -210,6 +213,8 @@ class army: public power { // creates army class
             cout<<"The available food is:"<<food_avaliblity<<endl;
             cout<<"Overall value is: "<<*Overall_value<<endl;
         } 
+
+        ~army(){}
 };
 
 class wealth : public power{
@@ -248,19 +253,20 @@ class wealth : public power{
             cout<<"The wealth of the king is: "<<king_wealth<<endl;
             cout<<"Overall value is: "<<*Overall_value<<endl;
         }
+        ~wealth(){}
 };
-class delete_class{ // deletes stuff cause 1 person thought it wasn't allowed in main
-    public:
-        void delete_objects(people *p, church *c, wealth *w, army *a,char *answer, int *check){
-                //IMPORTANT this section frees up memory do not add anything below please
-            delete answer; // frees up the memory for answer
-            delete p;// frees up the memory for people object
-            delete c;// frees up the memory for church object
-            delete w;// frees up the memory for wealth object
-            delete a;// frees up the memory for army object
-            delete [] check;// frees up the memory for check array
-        }
-};
+// class delete_class{ // deletes stuff cause 1 person thought it wasn't allowed in main
+//     public:
+//         void delete_objects(people *p, church *c, wealth *w, army *a,char *answer, int *check){
+//                 //IMPORTANT this section frees up memory do not add anything below please
+//             delete answer; // frees up the memory for answer
+//             delete p;// frees up the memory for people object
+//             delete c;// frees up the memory for church object
+//             delete w;// frees up the memory for wealth object
+//             delete a;// frees up the memory for army object
+//             delete [] check;// frees up the memory for check array
+//         }
+// };
 class stats{ // provides the functions for displaying stats and save files
     public:
         void update_stats(people *p, church *c, wealth *w, army *a){ // function to give out all
@@ -329,9 +335,7 @@ class stats{ // provides the functions for displaying stats and save files
             cout<<num8<<endl;
             cout<<num9<<endl;
             cout<<num10<<endl;
-            // c=new church (num2/2,num2/2);
-            //  w=new wealth (num3);
-            //  a=new army (num4/3,num4/3,num4/3) ;
+           
             // we divide the overall values between the variables
             // of the people to get to the same overall value when the game was intially saved. 
             int value; // assigns values from file
