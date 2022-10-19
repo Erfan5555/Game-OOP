@@ -35,6 +35,7 @@ class advisor : virtual public person { // advisor class
         void show_face(string face){ // visual representation
             cout<<face<<endl;
         }
+        ~advisor(){} // Deconstructor, deleting the objects of this class
 };
 
 class king : public advisor { // king class
@@ -62,6 +63,7 @@ class king : public advisor { // king class
         void kill_advisor(){ // kill advisor
             advisor::dead_advisor();
         }
+        ~king(){} // Deconstructor, deleting the pointer to object of this class
 };
 
 class spirit : public king, virtual public person{ // highest level class
@@ -84,4 +86,6 @@ class spirit : public king, virtual public person{ // highest level class
         void show_face(){ // visualisation of spirit
             cout<<"imagine you are seeing a face right now"<<endl;
         }
+
+        ~spirit(){} // Deconstructor
 };
