@@ -66,7 +66,7 @@ int main (){
         cout<<endl;
     }
     cout<<"Welcome  to Monarch"<<endl;
-    cout<<"type 'y' or 'n' for yes or no"<<endl;
+    cout<<"type 'y' or 'n' for yes or no and 'e' to exit the game"<<endl;
     int check_point;// is used to recoginse the placment of the game progression.
     char *answer= new char(3);
     advisor mat ("Matt","people's speaker",15);
@@ -108,7 +108,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -149,7 +149,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no\n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -189,7 +189,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no\n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -231,7 +231,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no\n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -277,7 +277,7 @@ int main (){
         return 0;
     }
     else{
-    cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -321,7 +321,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -364,7 +364,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -408,7 +408,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -452,7 +452,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -494,7 +494,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -537,7 +537,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no or e to exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -580,7 +580,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -622,7 +622,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -664,7 +664,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -709,7 +709,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -749,7 +749,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -790,7 +790,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -833,7 +833,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -874,7 +874,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+        cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -916,7 +916,7 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+         cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
@@ -970,13 +970,19 @@ int main (){
         return 0;
     }
     else{
-        cout<<"type either  y for yes or n for no \n";
+      cout<<"type either  y for yes or n for no and e for exit \n";
         cin.clear(); // clears the string errors in buffer
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clears the numbers in
         // buffer
         cin>>answer;
     }
-    delete_class del; // adds del class cause 1 person thought it wasn't allowed in main
+    // delete_class del; // adds del class cause 1 person thought it wasn't allowed in main
     file.save_game(p,c,w,a);
-    del.delete_objects(p,c,w,a,answer,check); // dynamically deletes
+       delete answer; // frees up the memory for answer
+            delete p;// frees up the memory for people object
+            delete c;// frees up the memory for church object
+            delete w;// frees up the memory for wealth object
+            delete a;// frees up the memory for army object
+            delete [] check;// frees up the memory for check arr
+    // del.delete_objects(p,c,w,a,answer,check); // dynamically deletes
 }
