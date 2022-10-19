@@ -6,7 +6,9 @@
 #include <fstream>
 #include <limits>
 using namespace std;
-
+// To start the game start makefile then choose a, b or c to either play, load or exit the game, your main 
+// objective is to not let any of the pillars of soceity to go to zero.
+//main contains the storyline, all the classes and their objects are called here.
 
 int main (){
     int *check= new int [70]; // used to track the progression of the game and check point
