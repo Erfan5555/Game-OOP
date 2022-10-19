@@ -230,7 +230,7 @@ class wealth : public power{
             srand((unsigned) time(NULL));
             this->king_wealth = king_wealth - (1+(rand()%20));
         }
-        void set_weatlh(int new_wealth){ // changes variable
+        void set_wealth(int new_wealth){ // changes variable
             king_wealth=new_wealth;
         }
         void Rebel(){ // special event
@@ -288,9 +288,7 @@ class stats{ // provides the functions for displaying stats and save files
         }
 
         void save_game(people *p, church *c, wealth *w, army *a){ // creates save file
-
             // gets the varaibles that make the overall value for each power.
-        
             int value_emp = p->employment;
             int value_food_people= p->food;
             int value_ent= p->entertainment;
@@ -345,7 +343,7 @@ class stats{ // provides the functions for displaying stats and save files
             p->change_food(num4);
             c->change_num_church(num5);
             c->change_pop_wealth(num6);
-            w-> set_weatlh(num7);
+            w-> set_wealth(num7);
             a->change_available_food(num8);
             a->change_num_of_troops(num9);
             a->change_weapon_quality(num10);

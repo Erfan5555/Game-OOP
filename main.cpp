@@ -12,7 +12,7 @@ using namespace std;
 
 int main (){
     int *check= new int [70]; // used to track the progression of the game and check point
-    people* p = new people(25,25,25); // creating a people pointer to an object of the people
+    people *p = new people(25,25,25); // creating a people pointer to an object of the people
     church *c= new church(7,27);// creating a church  pointer to an object of the church
     wealth *w = new wealth(25); // creating a wealth pointer to an object of the wealth
     army *a = new army (30,30,10);// creating a army pointer to an object of the army
@@ -29,7 +29,7 @@ int main (){
     cout<<"You are playing as a king who can not have any of their responsabilities to drop to 0"<<endl;
     cout<<"    M E N U"<<endl;
     cout<<"a: play new game"<<endl;
-    cout<< "b: load game"<<endl;
+    cout<<"b: load game"<<endl;
     cout<<"c: exit"<<endl;
     cout<<"To select the options type a,b or c "<<endl;
     char option[2];
@@ -427,7 +427,7 @@ int main (){
     }
     while (while_stopper==1 && check[check_point]!=1 ) // waits until the correct input has been made
     if (*answer=='y' && answer[1]==0 ) { // if answer is yes it will cause ceratin changes
-        w->set_weatlh(5);
+        w->set_wealth(5);
         p->change_Down();
         p->set_king_popularity(20);
         a->change_Down();
@@ -980,11 +980,11 @@ int main (){
     }
     // delete_class del; // adds del class cause 1 person thought it wasn't allowed in main
     file.save_game(p,c,w,a);
-       delete answer; // frees up the memory for answer
-            delete p;// frees up the memory for people object
-            delete c;// frees up the memory for church object
-            delete w;// frees up the memory for wealth object
-            delete a;// frees up the memory for army object
-            delete [] check;// frees up the memory for check arr
+    delete answer; // frees up the memory for answer
+    delete p;// frees up the memory for people object
+    delete c;// frees up the memory for church object
+    delete w;// frees up the memory for wealth object
+    delete a;// frees up the memory for army object
+    delete [] check;// frees up the memory for check arr
     // del.delete_objects(p,c,w,a,answer,check); // dynamically deletes
 }

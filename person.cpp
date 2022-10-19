@@ -39,9 +39,8 @@ class advisor : virtual public person { // advisor class
 };
 
 class king : public advisor { // king class
-    private:
-        int years_alive; // round count
     public:
+        int years_alive; // round count
         king(string name_i, string job_i, int power_i, int years){// constructor
             name = name_i;
             job = job_i;
